@@ -1,0 +1,19 @@
+# STM32CubeIDE / Eclipse workspace metadata (local, per-machine)
+.metadata/
+
+# Build output
+**/Debug/
+**/Release/
+**/build/
+
+# STM32CubeIDE / Eclipse project-local settings
+.settings/
+.cproject.bak
+.project.bak
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini

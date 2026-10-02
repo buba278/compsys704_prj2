@@ -1,15 +1,53 @@
 # STM32CubeIDE / Eclipse workspace metadata (local, per-machine)
 .metadata/
+RemoteSystemsTempFiles/
 
 # Build output
 **/Debug/
 **/Release/
 **/build/
+*.o
+*.d
+*.su
+*.cyclo
+*.elf
+*.hex
+*.map
+*.list
+*.lst
 
 # STM32CubeIDE / Eclipse project-local settings
 .settings/
 .cproject.bak
 .project.bak
+*.bak
+
+# IAR EWARM / Keil MDK-ARM build output and per-user files
+**/EWARM/settings/
+**/EWARM/Exe/
+**/EWARM/Obj/
+**/EWARM/List/
+*.dep
+**/MDK-ARM/Objects/
+**/MDK-ARM/Listings/
+**/MDK-ARM/DebugConfig/
+*.uvguix.*
+
+# Python (data analysis scripts)
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Claude Code local settings
+.claude/settings.local.json
 
 # macOS
 .DS_Store

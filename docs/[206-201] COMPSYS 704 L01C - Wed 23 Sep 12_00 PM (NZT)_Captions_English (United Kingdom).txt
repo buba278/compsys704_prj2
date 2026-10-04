@@ -1,0 +1,979 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Yeah. Uh, I've been talking about them. Maybe he's giving me an idea of what I could do.
+
+Um, yeah. I haven't fully decided yet. What about you?
+
+You're done. Right. Go ahead. Uh, let's remember for, like, homeless.
+
+Um, I do like, like, casual research. There's a lot of stuff, but I do, like five minute, like, work life balance.
+
+Like this. Yeah, because I need to, like, squeeze my three years, like, complex programming, like one and a half years.
+
+So it's like double work. Yeah, but but it's, like, easy.
+
+I just want to pass, like. Like this.
+
+Like in Taiwan. Like, if you like GPA drops to zero.
+
+Engineering degree get combo. Two summers. Yeah. I mean once you've done engineering, I don't think comps would be that hard.
+
+I mean, it's only like four, oh three, etc. and stuff.
+
+Yeah. This.
+
+Is one of the things. That you like.
+
+Yeah. Did you go to the Thursday one?
+
+Yeah. Yeah, I went through yours. I think it looks.
+
+Like there was not enough to cover like losses. Like It was like microcontroller.
+
+Like in general, it's like. All right. Cool.
+
+That's kind of like. I haven't looked up the lecture yet either.
+
+I think the majority of, like, Kevin Owens comes in and just like the projects.
+
+Yeah. Do we have any plan for the troops, for example?
+
+I just travel like overseas, travel overseas during the break for like on the summer.
+
+Yeah, all the time. Um, not looking into another.
+
+Into the future. So, I mean, I have not got a job so.
+
+Or an internship, so I'm kind of, like, free over the summer, but I don't think we're travelling anywhere.
+
+Just cause, um, money's a little tight these days.
+
+Yeah. Like, maybe, maybe the year after. I think I've had.
+
+Planning on doing a travel. Yeah, but my family doesn't travel too much in general, so.
+
+Yeah, I like, really like. Yeah.
+
+He's going out. Okay. What do I mean by trying to like us.
+
+This is like my brother used to work in New York, and I was just like, you see this photo?
+
+This. Is going on here.
+
+I've been there once. I definitely do like the times. I haven't been to, like, the Central Park, but it's more than like a business.
+
+It's almost like they have, like an expo. Like machinery expo.
+
+Like, I was thinking Orlando. And I'm just like, um, travel at the same time.
+
+It's like very dedicated researchers. I mean, strictly speaking, if it doesn't turn out for 2015, we can just leave.
+
+Right. Would you hit like 7000 or something to this lecture?
+
+I don't I didn't receive any emails though. I thought.
+
+We always in this room know half.
+
+Half. Yeah. Just always. David. What is this? Here and then?
+
+The next room. Okay. I completely. I completely messed up.
+
+I thought we were in the same room for, like, both Wednesday and Thursday.
+
+And then I went to the other room and. And.
+
+Yeah, the first sign said there were so many students sitting there. Oh, okay.
+
+Well. And I don't recognise any of them. Oh, okay.
+
+Give me a second. All right. Well, I need to bring up the.
+
+All right. This is likely to be my last lecture.
+
+Um, but before I get started, I just want to touch first.
+
+If you did any of. Have any of you read the project brief by now?
+
+Give me the one page content. I think I agree with it.
+
+Yeah. Yeah. Any one of you haven't read the project brief?
+
+I have just started on the lab, so I got that point. Okay. All right.
+
+Um, but just so you know, um, there will only be one more lap left before the interview, especially for Air Force.
+
+Right. Master students, you have next week. Next week we will have one extra lab session on Tuesday.
+
+Just to give you a, you know, more chance to talk to the GTA if you needed to.
+
+Uh, and Air Force will be completely out next week.
+
+Week nine for systems week. So by the time you and we'll release the The intern interview schedule, hopefully by this Friday.
+
+So you know, you will at least get a chance to say, okay, you know what I mean?
+
+We expect you to be available for that entire two hour session, right?
+
+So basically there shouldn't be any time conflict. But in case there's any emergency, feel free to let me know.
+
+But the interview is going to be Tuesday. Week ten.
+
+So that's the week after next week. Right. And for that interview, I'll give you more information in the announcement.
+
+But in that interview, we expect everyone to be able to read, interpret and validate the sensor data.
+
+Right. That is the absolute fundamentals before you even considering implementing an algorithm for the rest of the project.
+
+Okay. So just getting just reading the sensor data alone, um, will not be sufficient.
+
+Okay. If you show me that oh, I can read the sensor data out, but you can't tell me what the sensor data actually meant.
+
+And you know, and show me that the sensor value are sensible.
+
+You know, making sense. Then you won't get any marks. Okay.
+
+And also the literature review will be due in week ten.
+
+Tuesday. Well, it's a Tuesday on Monday. I think it's Tuesday.
+
+I think I make the I. Yeah. Tuesday. Yeah. Okay, cool.
+
+Uh, any quick questions about project two? How do you actually validate the sensor values?
+
+Because it's like a close box. You can't really connect to oscilloscope to it.
+
+No. Just like sort of like move back and forth and then just try to tell like the value change.
+
+Well, celebration. That's something for you to think about.
+
+Right. I mean, look, um, if I, if you bought a new oscilloscope and I want you to check how valid is oscilloscope isn't the same thing.
+
+It's still enclosed. You're not going to pull up the part that applies to any embedded devices that you buy.
+
+Right. You know, if you pull it apart, you break the warranty. Right.
+
+But you have to find some way to validate whether that reading makes sense to you.
+
+Right. Whether you can trust that reading. Right. Um, since you guys are here, you know, just to give you a hint,
+
+if you're measuring Excel acceleration, is there a fixed component that you can measure?
+
+Oh, like sorry, but it's like, well, gravity's not going to change.
+
+Well, gravity's not going to change from the fall from like the sky. And they're like no no no, no no, no.
+
+Gravity's always on you. You don't have to jump off a roof to measure gravity.
+
+Seriously, this is physics 101. Gravity is always on.
+
+Gravity's on me now. I don't need to jump off a roof to measure that frickin gravity.
+
+Okay. Right. You're shocking me.
+
+This is literally physics 101. You put the device there.
+
+The gravity is on. You cannot remove the gravity.
+
+If you want to fly, you need to compensate the gravity. Yeah.
+
+Make sense? The gravity is always on.
+
+There's not a single moment on this Earth. You can get rid of gravity.
+
+That is what's keeping you on the ground. Right.
+
+So? So, you know, if you if you do something reasonable, you should measure something.
+
+Yeah. But this is one. This is one part of it.
+
+You still need to work out the magnetometer part. Okay. Yeah.
+
+But there are ways definitely there are ways to validate your sensor readings.
+
+Okay. I actually don't know how many of the people who are not in the class is going to hear this in the lecture recording, but I hope they do.
+
+Um, okay. All right. Any other questions? No.
+
+Okay, so, um, honestly, this lecture is probably more relevant to, um, the the project.
+
+Um. Um, and I'll raise a few questions for you to think about during your project.
+
+Okay. So, uh, today's lecture is going to focus on localisation.
+
+Okay.
+
+As I mentioned earlier, um, if your device doesn't know its own location, then a lot of information collected by that device all of a sudden doesn't.
+
+Um, it's not that it's no longer that useful. Okay.
+
+So, for example, if you if you're doing a traffic camera, right, and traffic camera is detecting, uh,
+
+someone is breaching the traffic law or there is a traffic accident and the traffic camera cannot tell you where it is at.
+
+Then all of a sudden, those information has much, much less value.
+
+Right. You know, if I, if I, if I'm monitoring, uh, for example, a temperature, uh, in the sea,
+
+do I see sea surface temperature is actually a very important scientific value to, to be measured.
+
+Right. And if you don't know where that temperature is coming from, then that temperature value has no meaning.
+
+Okay. So there is a term called location aware service. Okay.
+
+It's a service that requires you to provide in conjunction with the location.
+
+Um, of course, um, different applications requires location information in many different ways.
+
+Um, and, you know, the the application requirement might demand different location accuracy, right?
+
+Might demand different location frequency.
+
+Uh, and of course, cost constraint is always one of the most important thing, you know, in terms of location Detection.
+
+Um, you know, sometimes, you know, you require submitter accuracy.
+
+Right. Very accurate, very precise. Uh, localisation. Sometimes you you just need to be zone based.
+
+Okay. You just need to know, okay, whether this inventory, for example, for supply chain management,
+
+you just need to know whether this box is inside the warehouse or outside the warehouse.
+
+Right. You know, you don't need submitter accuracy like, you know, or exact coordinate in centimetre level where that box is.
+
+You just need to know, okay, whether it's in the warehouse or in the truck. Right.
+
+So, you know, location, uh, really depends on your, um, application.
+
+Wait. Hold on. I just want to make sure that, uh. Okay.
+
+This is all. Okay, good. Right. Otherwise, whoever's listening to the lecture recording might not hear me.
+
+Okay. So, um, today we're going to cover two major categories of how localisations can be done.
+
+Okay. Um, look, localisation by itself is actually a research field.
+
+Okay. So there are many, many, many localisation techniques.
+
+Uh, we're going to broadly categorise them into two categories. Um, I don't really like to call it network based.
+
+It's more like a wireless signal based.
+
+Okay. Um, the and then the next category is what we call sensor based.
+
+Now the fundamental difference I used to separate these two categories, uh, the wireless signal based approach.
+
+Uh, on this slide, they require additional devices to be installed in the environment to achieve localisation where sensor based,
+
+they're more self-contained. Okay. They don't require any additional devices to be in the environment.
+
+They work by itself.
+
+Okay, so the most typical example for wireless signal based is radio frequency based localisation, which I'll show you the technique later on.
+
+Uh, the fundamental idea is uh, is basically deciding the distance between the transmitter and receiver.
+
+Okay. If you can figure out the distance between the transmitter and receiver,
+
+then you can kind of figure out the distancing and you can kind of figure out the location of the device.
+
+Okay. But again, that said you need the transmitter and receiver.
+
+It doesn't matter whether your own device is the transmitter or the receiver. You need additional device in the environment to be on the other side.
+
+Okay. So this type of technique definitely requires additional, uh, infrastructure.
+
+The most obvious example is GPS, right?
+
+Without the satellites, you know, just by having the GPS receiver on your phone, nothing's going to work, right?
+
+It's the fact that, you know, there's a, you know, transmitter on the satellite sending you the GPS signal.
+
+That that's the whole fundamental fundamental of this type of techniques.
+
+Although we're saying radio wave propagation on the slide. But the idea the fundamental idea applies to acoustic signal as well.
+
+Sound signal. Right. This is actually how in the old days I'm not sure if you sing um, robotics research for example.
+
+In the early days, there were research trying to deal with design robots dealing with multiple customers.
+
+So, you know, by using sound source and this arriving direction, the robot can decide, okay, Which customer am I talking to?
+
+Okay. So the same fundamental idea also applies to Soundwave.
+
+But of course Soundwave. Soundwave travels much slower compared to radio.
+
+You know, electromagnetic waves. So the distance resolution is bigger.
+
+Okay. So this type of techniques requires infrastructure.
+
+Sensor based usually accelerometer, gyroscope. They're they're completely self-contained.
+
+Okay. Just like the sensors in your mobile phone.
+
+Right. You don't need additional infrastructure to make your accelerometer work.
+
+Right. It will be able to detect the orientation of that device directly.
+
+So that's the fundamental difference. Of course, the the techniques associated with those sensors are also very different.
+
+Okay. So for example acceleration the most fundamental technique will be double integration.
+
+All right. If you're sensing acceleration integrating a once you get velocity integrating integrating it twice you get distance right.
+
+But again that's every time step you get a distance.
+
+Okay. So commonly you know for for for for sensor based techniques they need to use dead reckoning.
+
+Okay. So what dead reckoning means is they're finding the location in a iterative way.
+
+Okay. Step by step. So that means with dead reckoning, you need to know your initial location, right?
+
+Your initial location coordinate zero zero is where you start.
+
+Right. Every future step is actually a relative distance to your previous point.
+
+Okay. Very different to very different to a network based approach.
+
+Network based approach usually can give you an absolute Coordinate, right?
+
+Because it has infrastructure. You most likely know the location of the infrastructure, but in sensor base it's completely self-contained.
+
+So it needs to start from a non initial location and accumulate its distancing.
+
+Now that actually brings in a problem related to sensor drift,
+
+which means every little tiny mistakes you made along the way is actually accumulating right?
+
+So if I if I just try to quickly draw something.
+
+There. I mean, if we give you an example.
+
+So assuming this is your initial location.
+
+Uh, focus. Okay.
+
+Does not focus. Okay, so you know this.
+
+You're assuming that this is location 000, right?
+
+And you measure a distance. Okay.
+
+That's D1. Now, if if this is actually not if this is not the actual D1, this is what you measured your actual D1 is this.
+
+Then this arrow will stay there in your system.
+
+Right. You cannot remove it. Right. There's no feedback to allow you to detect the error.
+
+So in your next step you will start here as your starting point, and a relative distance will be added on top of that, right?
+
+If this step D2 made the same mistake and there is a shortfall, the error will keep accumulating.
+
+Okay. And now look at this example. I'm only talking about straight line.
+
+I didn't even add angles. Okay.
+
+If if I add angles situation will be a lot worse.
+
+If this is the ground truth and you measure exactly the same distance but in a wrong orientation, this will be your starting point for your next step.
+
+Okay. Even if you detect every step correctly at the end.
+
+Your final result will have the error. Okay.
+
+It's completely self-contained. It doesn't have a mechanism to have feedback to self-correct itself.
+
+Okay, so post distance error and orientation error will accumulate.
+
+And I'll show you an actual real world example, um, how bad it can be.
+
+Okay. The arrow accumulation can go beyond your imagination, you know,
+
+depending on how fast you're sampling within like 30s to one minute you're, you know, distancing arrow can be like, you know, 30m.
+
+That's completely off. Okay.
+
+Um, but of course, there are ways to, to to compensate that in your project, to your you'll be doing something similar than this.
+
+But but this issue does exist in practical applications. All right.
+
+Um, so I will start with, uh, wireless technology for localisation because this is one of the most common, uh, techniques.
+
+Um, there are many wireless wireless technologies, right?
+
+You know, the old days, QG, GSM, LTE, which is 4G.
+
+Wi-Fi. Bluetooth. Ultrasound. RFID.
+
+There are many, many. As I mentioned in my previous lecture, there are many, many different wireless protocols.
+
+Okay. Different wireless protocols have different communication range.
+
+Right? Different communication range means different coverage of your system and also different resolution okay.
+
+So for example NFC you know your your access card is a type of NFC right.
+
+It has to be extremely short distance. Okay.
+
+So don't even imagine that you can use NFC to do a building wide localisation.
+
+It can but it won't give you a very good resolution right. It won't give you like sub metre accuracy.
+
+It will be zoom based. It will. It can only tell you okay. Am I at that door or not when I swipe the access card.
+
+Right. That's the type of resolution it can achieve. Okay. Now, probably the most commonly used for indoor localisation will be Wi-Fi and Bluetooth.
+
+Because of their abundance already in existing building.
+
+All right. Now there are two basic type of approaches that we will go through.
+
+The first type is which is the majority type is a range based algorithm basically finding distance.
+
+So let's get on with that. Okay so as we mentioned for wireless technology you are basically trying to find distance between a sender and a receiver.
+
+Okay. So the first thing you can do of finding out the distance is using time of arrival okay.
+
+If the sender sends out a packet received by a receiver and that packet,
+
+that message has a timestamp, then you know when that package is sent and when you receive.
+
+Right. So you know the travelling time. And this is electromagnetic waves.
+
+So you also know the speed. Okay. So if you know the time and the speed, you know the distance between the sender and receiver.
+
+Very simple concept. Yeah. The same thing happens with sound waves as well.
+
+But again sound waves travels much slower so their distancing resolution will be larger.
+
+Okay. The arrow will also be larger.
+
+Um, but there's a there's a trick when you when you send the packet with time stamp and the receiver considers that timestamp,
+
+you're assuming that the sender and receiver are perfectly synchronised in their clock, right?
+
+They see the same time in their clocks. But that's not necessarily true.
+
+They're embedded systems. They have their own different clocks.
+
+Okay. And this timing we're talking about is at least millisecond level.
+
+Okay. We're not talking about one second or two seconds, one second or two seconds.
+
+You'll get a huge distancing error already. Right? So.
+
+You know, the fact that they don't share the same clock means time of arrival unless the two devices are perfectly synchronised.
+
+Otherwise, time time of arrival, as a simple approach might give you a lot of, um, calculation error.
+
+Okay, so this is a very simple one way time of arrival.
+
+Then there's an advanced version, a round trip, time of arrival, two way time of arrival means that from the sender, it sends a packet.
+
+Right. Time one and time two are on their own clocks. Okay.
+
+And then the receiver sends a time back.
+
+Okay. So for each node, we're only working out the differences according to their own timestamp.
+
+Yeah. So we require no synchronisation between the two nodes.
+
+Right between t1, t4. That's no AIS timestamp between T2 and T3.
+
+That's node js timestamp, right? So in this manner, the reliance on the two devices being perfectly synchronised becomes much less.
+
+Of course, that's a round trip. That's why you need to divide it by two. Okay.
+
+That is the time. And then using that time times velocity will allow you to get distances.
+
+Okay. So two way time of arrival is a lot more accurate. Okay.
+
+Another ranging technique is angle of arrival. Okay.
+
+So not talking about time, but from which angle the signal actually comes in.
+
+Okay. So usually this will require multiple receivers.
+
+Okay. I'm not sure if you heard something called a microphone array or you know, laser array, right?
+
+This is pretty pretty often used in microphone array and radar.
+
+Right. You have multiple receivers. Then you can precisely figure out the arriving angle coming from the transmitter.
+
+Right. And by figuring out the arriving angle, you can extend the pathway.
+
+And at certain point remotely those two pathways will join.
+
+Okay. And that's where your that's where the location is. Uh.
+
+Of course. Um, you know, this one without doubt, was at a much higher hardware cost.
+
+Right. Because you need to achieve good accuracy.
+
+The array typically contains 8 to 16 receivers.
+
+Okay. At the very minimum, you probably need four receivers to to reach a good accuracy.
+
+Okay. And another ranging technique is, um, signal strength.
+
+Okay. Um, as you know, wireless signals, when they propagate, their energy will reduce as they go along the distancing.
+
+Right? So this is actually the phrase transmission equation, right?
+
+This is the famous equation that tells you how the power of the transmitted transmitted message, uh, is related to distance r.
+
+Okay. So the longer you go, the weaker the energy it is.
+
+Right. So you can actually measure on the receiving side, you can measure the received signal strength.
+
+Right. The weaker the signal means, you know, the further away the transmitter is.
+
+Okay.
+
+So many radio devices, many radio ah transceivers will tell you the received signal strength indicator RSI okay RSI depending on the vendor they have.
+
+Um, they have different formulation.
+
+So what I'm showing you here is uh, the RSI here is actually one of the simplest, uh, formulation, um, which you need to actually calibrate.
+
+Okay. So usually you need to calibrate a parameter a, a you need to measure the RSI in DBM and one metre as a reference distance.
+
+And then you can you're able to calibrate this equation to work out future RSI for your device.
+
+This is something you need to check the datasheet okay. Every vendor every transceiver supplier might have slightly different calibration.
+
+So you need to check the datasheet to find out how you can calibrate RSI.
+
+Um but again. This is a common pitfall for every wireless based localisation technique.
+
+Right there is there's always attenuation or multipath fading.
+
+That happens for wireless wireless signals. Okay. So so wireless signal.
+
+You know this ranging technique although it gives you an absolute, you know, absolute location.
+
+Uh, the signal quality itself is usually not as good.
+
+Okay. Now if you are able to find the distance or the angle, then there are usually two approaches that you can use to find the exact location.
+
+Okay. So the first approach is called triangulation.
+
+Okay. Using angles right. If you know your receiving node location you know antenna number one.
+
+Antenna number two, if you know the two receiving nodes location and you know you can measure the arriving
+
+angle from this two node and then you extend out the the transmission pathway,
+
+Assuming that is a direct line straight line, you will be able to find out the location of the remote device.
+
+Okay, so this approach using angles is called triangulation. Yeah.
+
+The other approach, which is based on ranging, which is based on distance, is called trilateral vision,
+
+which is assuming that you are you are able to find the distance between the sender and receiver right about the time of arrival.
+
+Techniques that we mentioned.
+
+Now if you can find the distance assuming this is the sender, then the receiver or the distance between the sender and receiver is D1,
+
+then that means the receiver must be a point on this circumference, right?
+
+You don't know which point, but it's definitely a point on the circumference. Okay.
+
+So in order to find the location of the receiver, you need multiple senders.
+
+What were usually called anchor points. Right? The anchor points.
+
+The centres are usually the infrastructure device that you know their location already.
+
+Okay. And if you're able to know the distances from the receiver to all three anchor points, you're able to draw three circles.
+
+And where they meet is the location of the receiver.
+
+See if you only have one circle. The receiver can be any point on the circumference.
+
+Okay. If you only have two circles, the receiver can either be this point or this point.
+
+Okay. Only when you have three circles you're able to find the exact location of the receiver.
+
+But again this is the ideal world situation, right?
+
+You know, in real world situation the circle might not even join together or the circle might fully, you know, overlap with each other.
+
+So if I, if I draw, you know, show you quickly what I mean.
+
+So. The three circles might be like this.
+
+Um, so where's the receiver? There's no, you know, there's no intersection point.
+
+So, so there are a lot of, you know, post-processing algorithm that you need to do to actually correct that.
+
+And there can be also the case where. The three circles intersect like that.
+
+So in fact the point can be anywhere in this region.
+
+Right. The the the scenario that shows on the slide is the perfectly ideal situation where, you know, you know,
+
+very precise measurement that the circumference is all joint at the same point, but in reality it may not be the case.
+
+Okay. But this is what we call trial iteration, Okay.
+
+And this is actually the approach that's used by GPS. Okay.
+
+But the only catch you need to understand is if you only want to detect a location on a two dimensional plan,
+
+then you need to have three anchor points. That's non collinear, meaning that you cannot use a straight line to join these three points.
+
+Okay. If the old 3.03 anchor devices aren't exactly the same straight line, you won't be able to do that.
+
+Okay. And if you want to detect location in a three dimensional space like GPS,
+
+then you need four anchor node which is non coplanar, meaning that those four devices must not be on the same 2D plane.
+
+Okay. They need to have that 3D location differences for you to figure out a three dimensional location.
+
+Okay. And for GPS, uh, very often, um, you need more than three devices.
+
+I think usually GPS requires you to have at least signals coming from six satellites.
+
+And and that's something that's usually called multilateral.
+
+Okay. Trilateral. I mean, if you have three and kind of multilateralism if you have above three, um, anchor nodes.
+
+Right. So in reality, multilateral ation is a more commonly used approach.
+
+Okay. Any questions?
+
+Broadly speaking, which one is more energy. Um consumptive.
+
+Which one consume more energy. The sensor based or like the wire space.
+
+Um, like very application specific. I think wireless communication based is usually more power consuming.
+
+Okay.
+
+But usually you select 1 the one or the other based on the accuracy requirement because like I said, the sensor based one just isn't that accurate.
+
+And in reality you can do a lot more complex design, right?
+
+Again, a very typical waste fusion, right? You do both, but maybe you don't do the wireless one as often.
+
+Okay. Bear in mind the wireless approach gives you the absolute coordinate.
+
+Okay. It's more power hungry. Yes, but it gives you a more precise absolute coordinate.
+
+So you can actually use wireless. And this is what actually it's done in reality.
+
+You can use the wireless approach as a feedback to correct the sensor based approach.
+
+A hybrid is a hybrid approach, right. So you don't need to do wireless approach very often.
+
+Maybe you do it every 10s, but that every 10s is allowing you to correct all the mistake you've made with the sensor based approach from the course.
+
+Which one is more expensive? Like. Like why?
+
+Oh, in your project two will not allow when asking you to do the wireless approach.
+
+Yes. Right. Again we wanted to, but the project timing is just not long enough.
+
+If I have another two extra weeks, I might ask you to do that right?
+
+Okay. Cost perspective is like a WiFi transmitter.
+
+Always do a more expensive or like individual sensor. So it's like I think in the course in the past what we did is using Bluetooth.
+
+So it's actually very power efficient. Of course the cost like how much money o cost.
+
+Yeah. How much money if you want to like spend.
+
+So like either sensor like the WiFi transmitter like which one is more expensive I think these days they're all very cheap.
+
+Yeah. Yeah, I um yeah.
+
+No, I mean, they're all very cheap.
+
+I mean, honestly, many of the microcontrollers probably has Wi-Fi transceiver and IMU embedded in the microcontroller itself,
+
+so it's already one piece. Yeah, so I didn't I didn't look into the specific cost, but both are really cheap nowadays.
+
+Yeah. Okay. But having said that again Wi-Fi still need external infrastructure.
+
+You need to have all the WiFi access points. Right. So the accuracy of that Wi-Fi does not come with the device you bought or design.
+
+Right? The accuracy of that Wi-Fi also is impacted by the infrastructure. Okay.
+
+But the accuracy of the for example, acceleration is determined by your device.
+
+Right. So there's a lot of pros and cons that you need to take into consideration when you're designing the actual system.
+
+Right. So for example, you know, I did a project in the past about how a search and rescue in a fire fighter scenario.
+
+Can you assume you have Wi-Fi coverage when a building is burning?
+
+You can't. Right? It's just it's just not going to happen, right?
+
+Like redundancies without building. For example, you have like, Wi-Fi sensors.
+
+Again, this is not your call. You don't choose which buildings burning.
+
+And you know how much redundancy the building has. Right.
+
+This is not a correct assumption to make, right?
+
+Of course, you can make that assumption if you ask the firefighter to deploy the redundancy.
+
+Right. That's the extra hassle. Okay. So so so so there you know there are actually a lot of practical considerations.
+
+Okay. So the last approach for you know wireless signal based approach is called fingerprinting.
+
+Fingerprinting is actually a very simple concept. It's like fingerprints, right?
+
+It's actually a mapping exercise. So take this room as a as an example.
+
+Fingerprinting basically means okay, I have my device.
+
+I, for example, go every half a metre that direction this direction.
+
+And then I cover the entire room with half a metre resolution and measure the signal, receive signal strength.
+
+Right. So it's like you're creating the fingerprint of receive signal strength for this piece of physical environment.
+
+That can actually give you a very good accuracy. Okay.
+
+But the downside is every physical environment you need to repeat the process okay.
+
+They actually do this kind of thing when they're designing, for example, train stations.
+
+Right. Once you won't have permanent deployment and you know you're designing something that's so expensive already.
+
+Um, they can do something like that. But every different physical environment.
+
+You need to do fingerprinting over again. And if you change the physical environment, for example, you're adding a few metal shelves.
+
+That reading might change. So you probably need to do the mapping process over again okay.
+
+So fingerprinting can give you very good accuracy but it's very cumbersome.
+
+All right okay. So I probably won't cover the summary of uh this techniques.
+
+Um, the the other approach is the inertial navigation inertial sensors or inertial measurement unit.
+
+Uh, this basically is for accelerometer and gyroscope.
+
+Okay. So bear in mind this this sensors are not new.
+
+Okay. Accelerometers and gyroscopes are not new. They are used in, uh, for example, aeroplanes.
+
+Long, long, long time ago. Space spacecrafts long, long, long time ago.
+
+It's just the sensor itself might be this big. Okay, now the mEMS, the microelectromechanical system, the mEMS sensor is more recent.
+
+Okay. That's what that's the technology behind, you know, minimising inertial measurement unit so that it can fit into a phone.
+
+Okay. Accelerator and gyroscope by itself.
+
+They're not new. Okay. But the minimisation is more recent.
+
+Okay. Again minimisation is not completely cost free.
+
+It also means the accuracy goes down. Okay. Accelerometers and gyroscope can be highly highly highly accurate.
+
+Right. You're not getting the same accuracy for the ones you use on the phone and for the ones you use on the aeroplane.
+
+You know, when you're using using that device on an aeroplane, you want it to be extremely accurate.
+
+Okay. Um, and there are two types of, uh, inertial navigation systems.
+
+The systems I use on the, you know, things like aeroplane, they usually have a stable system,
+
+meaning that the sensor is mounted in a certain orientation. It will keep that way.
+
+Okay.
+
+Very often, for example, you know, if you have if you play with a drone before uh, very often there is a gimbal device associated with the sensor.
+
+So it doesn't matter how the external device makes physical manoeuvres, the sensor will stay in that global orientation permanently.
+
+So whatever sensor data you get, you know it's received measured in that orientation.
+
+Okay, this is not the case for strap down systems, which is the system, the type of system that you will be using in project two.
+
+Right. With embedded device, if you hold your phone like this, or if your phone is in the pocket.
+
+The orientation of your sensor will be different. Okay. And if you process the the recode signal in the same way, the algorithm won't work right.
+
+It might be completely upside down. You might think your y axis. You know it's in the same way, but your y axis is completely upside down, right?
+
+And then you're subtracting the outer gravity and you're making the situation even worse.
+
+Right. So the tricky bit about strap down sensors are systems is you need to work out the orientation.
+
+Now this is something I want you to think about. I'm open for you to make assumptions in your project too.
+
+Right. It's a wearable device.
+
+I'm happy for you to assume that the device is reasonably levelled, so you don't need to work out the orientation dynamically, because that will be.
+
+There will be another algorithm on its own. Okay. But this is something for you to for you to investigate and find out.
+
+Okay. Again, acceleration is a very simple rule, right?
+
+The only thing you need to keep in mind is you need to consider gravity. What you're actually measuring.
+
+What the sensor gives you is the actual acceleration plus gravity in certain axis.
+
+Right. Depending on how your device is oriented, you have 3D accelerometer, right?
+
+The acceleration is measured in three axes x, y, and z, right.
+
+Depending on how you orient your device, the gravity only applies in one axis, right?
+
+The gravity will not apply in all three axes. Okay, so how do you make use of that to validate your sensor data?
+
+And how do you remove the gravity component. Because that should not contribute into the algorithm.
+
+Perhaps it's something that you need to think about in your algorithm okay.
+
+Right. So the the algorithm itself is very simple, right?
+
+Like I said, acceleration. Double integration will give you distance.
+
+If you're using gyroscope, then you need to do the orientation correction.
+
+And you need to do a single step integration that will give you orientation.
+
+But in your case it's different. In your case you're using magnetometer okay.
+
+Magnetometer is slightly better in the sense that it will give you images global magnetic field.
+
+Right. So it will give you an absolute orientation measure. But magnetometer also has a lot of vulnerability on its own right.
+
+It's very sensitive to metal stuff. Right.
+
+You know, later on if you try bring your device, you know, when it's collecting magnetic data,
+
+try to move the device closer to a metal object like a shelf in the in the lab and see whether that impacts your reading.
+
+Okay.
+
+So then for your project, you need to look into certain calibration to adjust your magnetometer readings so the orientation measurements are accurate.
+
+Okay. So depending on the sensor you use you need to do different investigation to improve the data data quality.
+
+Now in project two we're actually asking you to do something much simpler.
+
+Okay. We're not really asking you to work out the, you know, raw distancing.
+
+We're asking you to do step detection and orientation detection.
+
+Okay. So you're basically detecting steps. You're not you're not actually directly detecting the distance movement distance.
+
+Okay. Detecting step is a different thing. So you should try to observe try to collect some data after you verify the the sensor readings.
+
+Try to collect some acceleration data. See for yourself. Human has.
+
+Human has repeated walking gait walking patterns.
+
+Right. That will produce repeated acceleration patterns.
+
+Okay. So I want you to do a bit of a reading in your literature review.
+
+Investigate the signal. You know, observe the signal yourself to see how does the acceleration data change according to your steps,
+
+and how can you accurately detect the steps. Okay, so step detection is one thing.
+
+Okay. Detecting the step is one thing. Estimating step length is a different thing.
+
+Okay. My step length will be different to for example a female right.
+
+So step detection without doubt what has less accuracy compared to actual distance sensing.
+
+Okay. But you can try to do the lens estimation or the fun side project.
+
+Okay, I probably won't go through a lot of details about the the rotation matrix.
+
+So I include this this slide and the next slide for completion.
+
+For completeness, a conversion a rotation matrix is basically how you apply to adjust your orientation.
+
+Okay. But adjusting orientation in 2D is easy.
+
+Adjusting orientation in 3D is much, much harder. Okay.
+
+So so so so in your project, I'm perfectly okay to accept that you're holding the device in a fixed orientation, right?
+
+But at the end of the day, the final interview for your project two is how accurate your step detection and orientation detection is.
+
+Okay. So it's not about whether I'm happy or not. You know, it's about your accuracy.
+
+Okay, so your mark actually comes down to how accurately you can detect the steps and orientation.
+
+But I do want to show you one example though. Okay. So this is actually one of the um indoor localisation algorithm that we designed in the past.
+
+So this is uh, this is using a accelerometer gyroscope.
+
+So the diagram on the left most is a diagram without orientation correction.
+
+Okay. You can see you can see the distance is not far off right.
+
+But if you don't have a correct orientation your path is completely wrong.
+
+Your trace is completely wrong. And you can you might be in the wall. Yeah.
+
+Okay. And after orientation correction, the tracing becomes a more accurate.
+
+Okay. So I just want to show you, you know, distancing may not be you know, the critical downside orientation is equally important.
+
+Right. If you don't have correct orientation you might end up with something like this.
+
+Okay. Right. So this is something some of the things that I want you to consider for your project,
+
+and probably for the first, uh, intern interview, these three questions is the most important.
+
+Okay. You need to get a sensor data, right. In an interview will ask you.
+
+Okay. How do you interpret that sensor value? Does that value make sense to you?
+
+Okay. Do you observe any fluctuation. Right.
+
+And the second the middle question do you need all the sensor data. This is something for you to decide.
+
+Okay. Bear in mind you're only doing step detection. Okay.
+
+With a fixed orientation. Do you need?
+
+Three axis of accelerometer. Do you need three axes of magnetometer?
+
+Something for you to observe and investigate.
+
+Okay, but those three questions are the are the starting point that I would encourage you to start thinking about your project.
+
+Okay. Again, like I said, there's not a lot of time left, especially for Air Force because you'll be away next week for the entire week.
+
+So so so so I'd really encourage you to start as early as possible.
+
+Right. Because by the time you come back in week ten that the Tuesday is the intern interview,
+
+and we cannot postpone that because postponing that we can 11 will leave two few,
+
+you know, two less time to between intro interview and the final interview.
+
+Right. And we have to do the final interview in week 12. Okay.
+
+So be careful about the timeline. You know, timing management is the most tricky part.
+
+Okay, so, so, um, and this is one of the main reasons why why I don't have a lot of lectures.
+
+Because I really want you to start focusing on getting the project done. Okay.
+
+So this is going to be my last lecture. I will go to the lab, uh, you know, from time to time, uh, next Tuesday,
+
+I'll definitely be at the lab, uh, for the first half an hour, in case if you have questions.
+
+So I'll, I'll use lab as, like, my office hours to answer questions.
+
+All right. So feel free to come to the lab and consult with us.
+
+All right. Otherwise, honestly, you guys, apart from old masters, um, I would trust your, um, you know, time management ability and leave it to you.
+
+Okay, cool. Thank you very much. And I will see you around. All the best.
+
+Thank you, thank you, thank you, thank you.
+

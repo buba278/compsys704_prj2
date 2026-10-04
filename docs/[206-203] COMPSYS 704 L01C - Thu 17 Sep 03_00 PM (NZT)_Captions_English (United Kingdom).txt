@@ -1,0 +1,1249 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Okay. Oh, wow.
+
+Okay. Very few room in this room. See, that doesn't have a clock.
+
+That's unusual. Okay, so. Oh, wait.
+
+Huh? Oh, the time is right. Okay, at least I can start now.
+
+Five past already? Um, so. Like I said yesterday, um, I won't take all the lecture slots.
+
+Okay. So I feel I have plenty of time.
+
+So my part is mostly project based, and, um, all the project information is already on canvas, so you should have all the information on canvas now.
+
+Uh, and we'll give you more instruction for the interview and final interview.
+
+Okay. Um, one of the main reasons why I don't have a lot of lectures, because this part of the course is already very tight, timely ones.
+
+Okay, so, uh, not for not for master's students.
+
+You guys will have more time to cover students. They have a one week off for a different course.
+
+So we ignite all the pathways. Students are gone.
+
+They are completely blocked off to do another big project. Um, so next Monday we will.
+
+Did you get my email about forming the project groups? Yes. Are you able to form the project groups now?
+
+Is the project group available on canvas now? Oh, yeah. Yes.
+
+Yeah. Okay, so form your project group as soon as possible, because by next month, they will hand out the project hardware kit that you need to use.
+
+Uh, and we'll only hand it out if you have your group. Um, I think I mentioned the deadline.
+
+Okay. Thanks. Friday. Yeah. Sounds of Friday sometime on Friday.
+
+After that time, I'll start randomly allocate people into groups. Okay.
+
+Uh, so next week is week eight.
+
+We will start the first, uh, the Getting Started project for Getting Started lab for this project.
+
+So next week's project, like next week's lab, is basically giving you a heads up about how to use that embedded hardware,
+
+because you need to program a microcontroller for this part of the project,
+
+and you need to design a human motion tracker to track the step and orientation.
+
+Okay. Very simple project. Um, so the first part of the project, you need to do some readings.
+
+Okay. So I want you to read four extra papers to find out the existing step tracking and orientation tracking algorithms.
+
+Okay, bye. Week ten. Week ten Tuesday. You need to do a demonstration.
+
+Hello? Yeah, well, you already heard that yesterday.
+
+I'm just telling people the the the overall project timeline.
+
+Okay. So by week ten Tuesday, you need to at least be able to read data from sensors.
+
+And you need to actually show us that you actually know how to interpret the sensor data, right?
+
+If you don't know how to interpret the sensor data. You won't be able to design an algorithm to detect the steps and orientation.
+
+Questions? Yeah. Sorry. I want to know what type of the microcontroller.
+
+What type? What sorry. What type? What type type?
+
+SD uh, stm32 FC 32. Yeah, yeah.
+
+Okay. So I mean, it's actually one of the most common ARM based.
+
+Microcontrollers. So, um, if you're familiar with systems that you do, that's definitely a plus.
+
+Yeah. Okay. Uh, so, uh, Tuesday, week ten, that's when you need to do the intern demo and submit the literature review report.
+
+Again, it's not a big literature review report. It's just one page. Right?
+
+I'm only asking everyone to read four papers, so I'm not expecting people submitting ten pages to me.
+
+Okay. Um, and then you have, uh, week ten.
+
+That's the intern interview. You have week 11, and then week 12 is the final demo.
+
+Yeah. So you see what I mean? You know that this part of the course is actually very tight.
+
+Um, and I would expect you to spend more time in the lab implementing the project.
+
+Right. On average. We're still expecting you to spend ten hours a week for.
+
+For each course. Yeah. Okay. So I think I think I probably, most likely I won't use the entire two hours today.
+
+Um, you know, that's quite exhausting. Uh, I think I'll probably use one to 1.5 hour today, and then I will have another one hour next Wednesday.
+
+And I think that's all my lectures from that point on.
+
+We will expect you to fully focus on your lab. Okay, cool.
+
+Um, so just to, um, quickly run through the, um, the context.
+
+So my part of lecture, um, is more about sensor networks.
+
+Okay. So I'm using wireless sensor network as a context for embedded systems.
+
+Okay. Because that's a very typical application. Um, most of the existing, uh, real world application, you know, home automation, wearable devices,
+
+you know, um, uh, intelligent, you know, electric vehicle, they're actually all embedded systems.
+
+They're all variant of wireless sensor networks. Okay. And yesterday I introduced the concept of ubiquitous computing.
+
+So if you're interested you can go through yesterday's lecture recording.
+
+But like I said, you know, this course we have no, uh, exams. Right.
+
+So I'm just trying to provide you a context and, uh, bring some.
+
+System level design thinking that you should be aware of when you are designing, uh, embedded systems, um, in real life.
+
+And I think yesterday I, I that's where I start that um, so I was looking at, um, Energy constraints for embedded systems.
+
+Okay. One of the main things I mentioned yesterday is that when people are getting started with embedded systems,
+
+one of the main, um, purpose of embedded systems is hoping for mobility.
+
+Right. We want to make devices smaller and smaller so that they become mobile.
+
+They become portable so that humans can it's more easily deployable or human users can carry them around.
+
+And very soon after, you know, people are being able to make things smaller.
+
+People start realising, um, just by having a smaller device is only half of the story.
+
+You need to have connectivity, right?
+
+If you if you think about any real world application, if you have an embedded device but you don't have wireless communication with that device,
+
+all of a sudden that device is not that useful anymore. Right.
+
+Thinking about your mobile phone. If it's just a small computer that has no Wi-Fi, no, no, no cellular connection.
+
+How useful that small device is, right?
+
+So that's why very often embedded systems and wireless communication go side by side.
+
+Okay. And that's why I'm choosing wireless sensor network as a context.
+
+Because it very well captures both requirements and and and and and in that context and also applies to just about all embedded systems.
+
+Energy is definitely one of the biggest constraints okay.
+
+Because without wire attached, uh, most of the embedded systems are actually battery powered.
+
+Right. So that makes energy consumption a critical, uh, design challenge for embedded systems.
+
+Okay. And one of the main things I do want to reiterate is when you're designing an embedded system, it is almost always Cross layer design.
+
+Okay. There is I, I'm not seeing a lot of challenges in embedded systems that you only need to look at one layer of the system design.
+
+Okay. So here I'm giving you an example. When you're designing an embedded system and you want it to be energy or power efficient.
+
+You can look at a physical physical layer right how the microelectronics are actually designed.
+
+Right. The the the electronic component you choose will determine how power efficient are the devices.
+
+And it also depends on what kind of wireless communication protocol you're selecting.
+
+Okay. Different communication protocols will have different, uh, energy consumptions.
+
+Uh, and depending on protocol the network layer will determine how routeing is done.
+
+Different routeing protocols will also determine how power hungry certain protocol is.
+
+Uh, Whether your application requires you to have an operating system.
+
+Not all application requires you to have operating system. And how secure do you need your device to be, right?
+
+If you want to, if you want to make it very secure, if you want to do encryption, then encryption will create extra overhead, right?
+
+To generate encrypted packet. That operation itself is consuming energy.
+
+Right. And encrypted data will inevitably be larger than raw data.
+
+Okay. So there will be more data to be transmitted through wireless communication.
+
+So security will cause a lot of power concerns at different levels.
+
+Middleware is a it's a less used term these days.
+
+Um, but uh, in this context we're referring to if you're collecting sensor data,
+
+obviously you can sense you can send all the sensor data to a central location,
+
+for example, the cloud to do processing, or you can actually do some pre-processing, right.
+
+So for example, if you're collecting sensor data at 60Hz, that's actually very fast, right?
+
+Every second you're getting 60 sample data. Do you need to send all of them.
+
+Okay. Does your application require you to have such high sampling rate?
+
+Does whatever. For example, the signal processing or machine learning algorithm you're running at a remote site requires such a high sampling rate?
+
+Can you merge the data? Okay. And there is actually a very interesting, very simple, um, very simple method to save, save the size of the data.
+
+So instead of sending raw data you can set you can send their differences.
+
+Right. So for example, if the if you're trying to send temperature and the temperature data can be in a wide range,
+
+the first temperature is 20 and the second temperature is 21. The second data you're sending doesn't need to be 21.
+
+It can be one. It can be a differential data to the previous one.
+
+Then in that way you can actually reduce the size of data you're sending.
+
+Okay. So there are a lot of ways that you can make, um, your operation more energy efficient.
+
+Okay. The other design challenge and design consideration is how self, um, management can be achieved.
+
+Okay. For a lot of embedded systems, um, it actually requires operation without human attention.
+
+Okay. So I can give you a few examples. For example battlefield assessment.
+
+You know this is actually happened, right? You know, you fly your fire, you fly an aeroplane, and you actually drop sensing devices,
+
+for example, that you you want to detect landmine explosives.
+
+Okay. So you can drop embedded devices by aeroplane. So you're not sending human troops to deploy the embedded device.
+
+But then if you're doing like if you're doing things like that, you don't know when you're dropping the device from an aeroplane,
+
+you don't know what is the orientation the device will be when it hits the ground.
+
+Yeah. And you don't know the location of that device.
+
+You couldn't even control how many surrounding neighbouring nodes.
+
+Neighbouring devices are there when the device is actually on the ground.
+
+Okay. Another example I can give you this also actually happened in reality is a volcanic monitoring.
+
+You know, so scientists have deployed sensor network near volcanoes to detect whether there is any volcanic, um, you know, uh, actions.
+
+Now, obviously, the reason that they're doing that is because they can't send humans directly into those sites.
+
+their safety issues to send humans to deploy sensing device near the volcanic area.
+
+So imagine this kind of scenario or for example, you know, forest monitoring, this kind of scenario.
+
+You're not sending a human to deploy the embedded device. Actually the embedded devices are deployed in a random fashion, right?
+
+So there are quite a few things that you need to think about if you're targeting that kind of application.
+
+Even if you think about home automation, right, how you deploy a Wi-Fi network, that's also a black art, right?
+
+Where are you? Where do you place the Wi-Fi network? Where do you need a repeater to make sure that the Wi-Fi covers the entire house?
+
+It's actually not easily decided. Uh, so first of all, you know, I can give you a few examples.
+
+This is definitely not an exhaustive list. How can the device know its location?
+
+Okay, it's very, very soon people start realising if you are collecting sensing data without knowing the location.
+
+The sensing data may not be that useful, right? If you are sensing temperature, right?
+
+As a very simple example, you're trying to sense temperature, but you don't know where is the location of that temperature.
+
+That that temperature is representing that. Then that temperature has always, you know.
+
+All of a sudden that temperature is much less value, right? So can the device determine its own location?
+
+Can the device determine what other devices are surrounding them?
+
+Okay. Yesterday we covered two wireless topology, wireless network topology, one star network, one mesh network.
+
+Right.
+
+If you want to deploy a mesh network, that means there will be intermediate nodes to form the communication pathway for you to send the data out.
+
+If you as a device, if the device doesn't even know how to reach its neighbouring nodes, there's no connection and you can't send the data out.
+
+Okay, so can the device automatically find out who are my neighbours?
+
+You know, assuming they are neighbours, right? And then how do I find a route?
+
+How do I find the communication route? Right. If I want to send this device to my to to my central station.
+
+Right. Whoever the scientist is collecting the data, how do I find out that route?
+
+To go back to where the data should be collected. Okay.
+
+And how do I initialise the data? How do I initialise the sensor?
+
+Right. Like I said, sometimes when you when you deploy the sensing device of embedded device, the the orientation of that device might change.
+
+Okay. So if you're, if you're sensing motion data, and the device is dropped and it's upside down and you don't know it.
+
+Then when you receive the data, you're not seeing, the gravity is pointing up, right?
+
+So there's actually a lot of on site calibration and the embedded device can do for you.
+
+Okay. And then. There's another level of, uh, soft management which is more for handling failures.
+
+Okay. Taking an example, uh, like the the connectivity example that I just mentioned.
+
+Obviously the first step is for you to find out, okay, who are my neighbours?
+
+But the problem is, is as you deploy those systems, the embedded systems, things will change.
+
+Right. After one year, after two year after three years, things are changing.
+
+Maybe one device will die first.
+
+Because out of battery, out of power, right?
+
+Because maybe that device is actually the most popular node that everyone, when they want to send the data out, they go through that device.
+
+So that device dies first. Right.
+
+Not all the device, even if you put if even if every device is designed in the exact same way and you put the same brand of battery,
+
+every device will die at different time. Right. So you can never guarantee, you know all the device will die at the same time.
+
+So the system stability, the system functionality stays with the weakest link.
+
+Right. If one device died, every node tried to communicate through that device.
+
+It's literally dead as well. Right. Because the data cannot come out.
+
+If that's if that happened. Can a device know?
+
+Okay. My upper layer is dead. I need to find another upper layer.
+
+Right. So how automated a device can be to bring itself out from those failure situations.
+
+That's also part of the self-management. Okay, so there are many different layers of self-management that you need to think about
+
+when you're designing embedded systems according to application requirements.
+
+Okay. This is this. This is application specific configuration right.
+
+There's no right or wrong answer. It's all about application requirements.
+
+And that's what I just asked. For example the sensor wireless sensor in forest.
+
+And um how can we get the data. Should it, you know, communicate with the satellite then?
+
+That's actually a very good question. Um, you put it in for the rest of the time.
+
+Again, like I said, I use an example.
+
+I, I have a lot of examples about forest monitoring because that's one of the, one of our key research area in New Zealand at least.
+
+Yeah. But again, personally I don't think any of those solutions are silver bullets, right?
+
+They all have their issues. Okay. Satellites.
+
+You would imagine satellite would be a good, um. Would be a good approach.
+
+Right? But very often, I don't know how many of you guys have used Starlink.
+
+Anyone has experience with Starlink? It does actually require direct line of sight with the sky.
+
+Okay. So you cannot use Starlink here. Right.
+
+It needs a direct line of sight with the sky. You need the open sky so that the satellite can actually communicate with your receiver.
+
+Yeah. It's actually not that easy to guarantee that in forest, you don't always get open sky in forest.
+
+And the example I gave you yesterday that the device people placed on the tree actually got covered by the tree.
+
+If that happens, that also won't work. Right. So how can you how can we get the signal from from it?
+
+Um, so so first of all, obviously if you want to, If you want to ensure coverage, you want to find a very long distance communication.
+
+Right. And then secondly, you need to deploy your own network.
+
+Right. So your own base station with your own repeaters to extend your own network out,
+
+because you need to do onsite measurement and making sure that, okay, at this location, at this spot, I can still get signal.
+
+And the signal strength is very good,
+
+but even that will guarantee the communication for a certain period of time because in forest trees grow things changes all the time.
+
+Right. So it I at least I'm not aware of a 100%, you know, guaranteed communication network.
+
+Forest monitoring is actually not that easy. You need to have a very good infrastructure deployment to make sure the connection is always on.
+
+So using that we can set up our own station.
+
+For example, in my factory, I can say technology wise, you can, whether you know whether that's legal or not, that's a different story.
+
+Okay, okay. The technology exists. I'm not saying you can go to the forest and deploy.
+
+Okay. That's definitely not what I'm saying. The technology is there.
+
+We have the technology, but you're not necessarily allowed to deploy that in the forest.
+
+Not like in our own factory. Can we have our own station?
+
+That's up to you. Obviously. You know, if you own the factory, you can do whatever you want.
+
+I have asked like a telecom in China. I said, oh, I want to do that.
+
+He said, if I ask them to do it, it's very expensive. Okay. There's another legality issue okay.
+
+But again you know, okay. We're really side tracking. Now this is not about embedded systems.
+
+But I'm going to answer this question. You are you're not necessarily allowed to have a communication network that's licensed.
+
+For example if a if a communication channel is already licensed, for example for cellular network, right.
+
+That's used by mobile phone. And if you want to transmit in that channel, you need approval.
+
+It's not that straightforward. Yeah. You there.
+
+There's a lot of licensing steps that you need to do.
+
+You know, governments will require you to pay before they certify your device can work in that frequency range.
+
+But yeah, again, you know, that's case by case. That's the that's very very different.
+
+Okay. Yeah. Any other questions.
+
+How do we know like the life expectancy of like a certain controller in a forest and like I think like ADC sometimes like they drift.
+
+So like they become less accurate over the time.
+
+True. Yeah. So so so I.
+
+I think that's a that's a very good question. And that's something you need to consider about your application.
+
+Right. If you decide to use analogue sensor then you need to look at analogue sensor behaviour from the datasheet.
+
+Right. If the analogue sensor performance varies according to temperature, and you deploy that in a forest,
+
+that the temperature variation can go from -2 to 18 degree of the day,
+
+then yeah, your sensor data can give you very different sensor sensing results depending on what time of the day you're doing that measurement.
+
+Right. Um, can you get away with some digital sensor that's already factory calibrated and is more reliable towards different,
+
+you know, within a certain temperature range? This is a design requirement. And this is exactly what when I say, you know,
+
+there's actually a lot of application requirements that you need to consider when you're designing embedded systems.
+
+Right. Every application has different requirements and we're facing that challenge, you know,
+
+on a daily basis when we deal with different, different, you know, applications.
+
+And and I'm not going to lie to you, this is a struggle that a lot of electronic and computer systems engineers are facing.
+
+A lot of people come to us wanting something to be designed and we say, okay, this is going to take us, for example, five grand to design that device.
+
+And people will ask us, well, if I can get a Raspberry Pi for $200 and put a sensor there and it works, why should I pay $5,000 to design a device?
+
+And you know, our answer can only be, of course, you know, be my guest.
+
+You know, you can put a Raspberry Pi into a forest and see if Raspberry Pi can survive after two weeks.
+
+Right. And, you know, it's actually hard for a lot of users to appreciate, you know, embedded devices.
+
+Actually not that easy to design. Right. But you guys are different.
+
+You guys are engineers, right? I'm not expecting outside users to understand this, but you guys should.
+
+Right. So you should know as an engineer that you're actually doing some very challenging stuff.
+
+This is not something that everyone can do, right? And it's not this kind of system level thinking is not there for everyone.
+
+You know, people usually will think, okay, you know, measuring temperature is easy.
+
+You know, I just put the electronics and I put it in a box and I leave it there.
+
+Yeah. Even measuring temperature is not that easy. But I can give you an example, depending on how the air conditioner is installed in this room.
+
+If you measure the temperature there and if you measure the temperature there, it might be slightly different.
+
+Right. When it's when it's industrial process a differ by one degree might be very different.
+
+Right. You don't know. That's. You know, that's all the application requirements that you as an engineer, a as a designer need to think about.
+
+Right. And trying to bring users to appreciate that is the challenge that you know they are facing.
+
+Yeah. Okay. Cool.
+
+So next challenge for wireless sensor networks deploying the communication.
+
+Okay. There are many, many different wireless communication protocols.
+
+Okay. Yesterday I mentioned a few okay Wi-Fi. Everyone knows glucose, right?
+
+Zigbee. Uh, thread matter. Those are.
+
+There are a lot of wireless communication protocols. Um, obvious.
+
+Obviously, one of the most important things for wireless communication, first of all, is the communication range, right.
+
+How far away can the two device be between the transmitter and receiver?
+
+Right. For example, Wi-Fi typically can be, you know, 50 to 200m, depending on the physical environment.
+
+Again, wireless communication is really a black art, right? That's why you're hearing such a wide range 50 to 200m.
+
+If you put Wi-Fi out in an open space, it actually can go very far.
+
+But if you put an indoor, that's a different story, right? With all the walls, metal cabinets that that will show the the electromagnetic wave,
+
+all of a sudden, you know, the communication range becomes much smaller. Okay.
+
+So there are all sorts of attenuation that will limit the communication range.
+
+Now if your communication range is limited then how do you improve the coverage.
+
+Then that's what I said earlier. The the multi hop Communication.
+
+Sorry, I should have turned that on earlier. Come on.
+
+Give it one second. So.
+
+Oh, good. Um. Somehow I don't feel this is focussed.
+
+It is not focussed. It's still not focussed.
+
+Okay, let me try. Okay, so imagine this is device A, this is device B okay.
+
+It's definitely not focussed. Okay.
+
+That's great. Okay. And these two devices are out of range. Okay.
+
+They cannot directly communicate with each other. So the easiest way is you have multi hop communication.
+
+This is basically what WiFi IP network is doing. Okay. So you send your data to this.
+
+And this relay node sends the data to this. And eventually it's reaching device B okay.
+
+Obviously there needs to be a routeing protocol. Right. That's determining okay.
+
+How where should I forward the data to to reach my final destination.
+
+Right. So in IP network you have IP addresses. There will be, you know, helping routeing network to resolve where am I destinations.
+
+Okay. Now routeing is not the focus of this course, right.
+
+I just want to point out, you know, you can imagine if there is a direct communication, it will inevitably be faster, right?
+
+Every segment of communication this device needs to receive,
+
+and there needs to be a software process to process that device and decide, okay, which one is the next node that I forwarded on.
+
+So there will be a processing overhead and the more hub.
+
+So this is a single hub. The more hub you go through inevitably that will increase latency.
+
+Okay. It does increase the coverage, right? Don't get me wrong, what I'm trying to tell you is there's always a trade off, right?
+
+It gives you a longer distance coverage. So originally inside for example indoor, your WiFi can only cover 50m.
+
+Now your Wi-Fi can cover 2.5km, right.
+
+It will increase your coverage, but the latency will also slow.
+
+You know, it will also make your communications slower. Right. So latency is one of the issues.
+
+And every segment of communication is a potential failure, right.
+
+If all of a sudden this link failed because someone is moving a metal shelf and the communication between these two devices are blocked.
+
+All the previous communications might be wasted. Okay,
+
+so multi hub also means that potentially you're having higher likelihood of failure
+
+because you have more segments than you need to guarantee that X is actually working.
+
+And this kind of um communication is also tricky in a way that wireless communication is um it's not directly, um, obvious.
+
+But if you if you think about if you think about a wired network like Ethernet.
+
+Only one device can send data out at one time.
+
+Right. The same thing is almost the same with wireless network.
+
+If they're in range. Right? If these two are in. Are not in range.
+
+Obviously they can communicate. They can transmit at the same time.
+
+But if these two devices are actually in range with each other, only one device can can transmit.
+
+Otherwise, your data packet will collide in the air.
+
+Right. The electromagnetic waves will collide in the air. Okay. So there are a lot of different ways to solve this collision.
+
+Because if collision happens, the data will be corrupted. Nothing will be received.
+
+Okay. So there are two common ways of solving this issue.
+
+Um, I'm not going into the detail because this is something that should be covered by a network paper.
+
+But you know, as an embedded designer, you should have a basic understanding.
+
+So there are two potential ways. One is called contention based.
+
+One is called contention free. There are two categories. Okay.
+
+So. Contention.
+
+Based. Did anyone have any one of you heard?
+
+Uh, csma CA. That's one of the techniques used by, uh, Wi-Fi.
+
+So it's called career sense. Multiple access with collision avoidance.
+
+Okay, so what does career sense mean?
+
+Career sense means all the devices want to transmit will listen to the wireless channel before they transmit.
+
+They'll try to listen to that channel if the channel is quiet, that's more likelihood that no one is transmitting.
+
+Okay. That's what career sense means. They will try to listen to the channel first, making sure the channel is quiet.
+
+Okay. And the multiple access means. Okay. Multiple device can access the channel.
+
+Okay. Even though there's career sense, collision might still happen, right?
+
+You can never guarantee two devices distributed independently.
+
+They can still send at the same time, right? They post listing at the same time.
+
+Thinking the channel is quiet and then they both transmit at the same time.
+
+Okay. Career sense can only, uh, prevent collision to some extent.
+
+Okay. But of course, if when the device listened to the channel and someone is transmitting, then there will be a backoff timer.
+
+It will try to, you know, time itself for a certain period of time.
+
+And then after that timer, it will start transmit, and it will start listening again and start trying to start transmitting again.
+
+Okay. And collision avoidance is, you know, if collision did happen, then again there will be a timer.
+
+There will be a retransmission time. Right.
+
+If the collision has been detected, then it will try to wait for a certain amount of time and then try to reset the packet.
+
+Okay. But again, as you can imagine, if you are rescinding the packet.
+
+First of all, it wastes a lot of time. You already transmitted once.
+
+It didn't succeed. And second of all, it waste power, right?
+
+For one data, you actually waste twice the amount of power to send that data out.
+
+Okay. But so this is contention based, meaning that the protocol itself allows for competition.
+
+Right. The protocol is one that divides to compete for the wireless channel for transmission.
+
+Okay. That's one typical uh, uh, category of uh, protocols.
+
+It's usually used for commercial, uh, consumer applications like Wi-Fi.
+
+When communication latency doesn't need to be guaranteed.
+
+Right. So, you know, for example, if you're doing video streaming okay, you know, it would be nice to see a smooth video, but once in a while.
+
+If the video glitches, it's not the end of the world, right?
+
+It doesn't kill anyone. Okay, so you don't need to guarantee, okay, that video data needs to be there within a certain time.
+
+It cannot be guaranteed. Okay. Now another type of method called contention free.
+
+Okay. So this type of method does not allow contention. It doesn't want devices to compete with each other.
+
+There are different ways of doing that. The simplest way is called TDMA.
+
+Okay. Time division multiple access. So basically it provides duty cycles.
+
+Okay. So you assume it assumes if this is the timeline this is my cycle okay.
+
+If my network has five devices I'll break down the time into five periods.
+
+Every device gets its own period. Okay.
+
+You can only transmit within the given the allocated time period.
+
+Outside that time period, you have to sleep. You're not allowed to talk.
+
+Right. And in order to do that, every device needs to be synchronised.
+
+Right. Because if you're not synchronising time, this device hasn't finished.
+
+And you think, oh, I'm starting already. Then collision will again happen.
+
+Okay. So for TDMA, uh, devices need to be highly synchronised.
+
+Okay. Another, uh, method for contention is DMA frequency division multiple access.
+
+Then you're dividing the channel into multiple frequency sub frequency channels.
+
+So everyone is using slightly different frequency channels that will also allow multiple access.
+
+But as you can imagine TDMA contention free has larger limitation.
+
+For example, in terms of how many devices you can support at one time. right?
+
+The more device you need to support, the longer this entire cycle is.
+
+Because, for example, this device after sending it, needs to wait until every other device finished and then it can start transmitting again.
+
+So the more device you have, the shorter the period you can send and the longer you need to wait.
+
+Right. So there's got to be a physical limit of you know, how long your application can accept.
+
+Okay. But if your if your um, if your application for example,
+
+a lot of industrial networks linking the PLCs, the only sending very simple sensor data, right.
+
+Every device just needs for example, 30 milliseconds.
+
+And they need absolute guarantee about timing.
+
+Right. Every three seconds I need to receive a temperature sensor data.
+
+Then this type of network might be more useful. Okay.
+
+Again. Design compromise. Okay.
+
+It's all to do with application requirements. Okay.
+
+And then another issue about network architecture is do you want to do the management in a centralised or decentralised way.
+
+Okay. Centralised is definitely useful right.
+
+If your system architecture if your network architecture is not big.
+
+Right. Say you only have ten devices and one central device can actually see all the other devices.
+
+Then if that device can do centralised decision, that decision is a globally optimised decision, right.
+
+Because it can receive all the data. Right.
+
+It can see which device is busier, which device is less busy.
+
+You know, it can actually you know, they can be algorithms designing the central device to optimise the entire Operation.
+
+But again, the reason why people move away from centralised management is because it's usually physically impossible.
+
+Usually your deployment will be much bigger, so there's no single device that will have a global view of your entire system, right?
+
+Which means every individual device need to make certain decisions based on its limited local view.
+
+And this is also what happens with IP network with internet, right?
+
+If you have devices that extends to the entire Earth, there's no way you can have a centralised decision.
+
+You know, most likely you will have a hierarchical, decentralised decision making.
+
+So I'm using routeing as an example. Right.
+
+If you have a centralised system, routeing will be a lot easier, right.
+
+Because there will be one device deciding how this device connects to another device.
+
+All right. This can be a lot more efficient. Okay.
+
+But that's provided that one central divide. There's the existence of that central device.
+
+Need to be there. Right. If there's no device that have the global knowledge, this is not achievable.
+
+And you cannot achieve a centralised decision. So this is also something that's um, that's very important when you're designing embedded system.
+
+Obviously according to your application requirement you want to make your system as simple as possible.
+
+Right. The simpler the system is, the more reliable it will be.
+
+That's usually the case. Okay.
+
+Some other design constraints. Um, when you're, you know, in addition to energy communication, self-management,
+
+there's a lot of other design constraints that you need to think about, right? How much processing power do you need?
+
+Okay. Every, you know, microcontroller has limited computational power.
+
+How much storage capability do you need? Right.
+
+As I mentioned yesterday. Storage is actually one of the biggest constraints for embedded device, right?
+
+Having a large amount of storage is expensive and also power hungry.
+
+Okay. Memory components are actually very power hungry.
+
+And the more memory access you're doing with more energy.
+
+And the other thing that a lot of people usually don't think about is the number of Io's general purpose io, right.
+
+The smaller you want the chip. Right.
+
+Usually a chip, a microcontroller dies like this, right?
+
+You have those small pins. Okay.
+
+Does that make sense? This drawing? Yeah. The smaller you want your device to be, the fewer number of IO pins you will have available.
+
+Okay, this is one of the main reasons why a lot of computing systems, not only embedded systems, are moving away from parallel buses.
+
+Right? In the old days. Peripheral bus are usually parallel buses.
+
+Right? You know, at the same time, you can send one byte of data with eight wires.
+
+Okay. For electrical engineers or the electronics engineers, you probably get more and more feeling about that.
+
+Eight wires. That means on PCP you need to have eight wires to route.
+
+That is just one bus, right? Imagine if you have multiple components.
+
+Routeing a bus is a it's it's a it's a nightmare right.
+
+You want to save the the wiring as much as you can. Right.
+
+That's why for a lot of embedded devices, um, people are moving away from parallel buses and going to serial buses.
+
+One of the most famous ones is USB, right? Universal Serial bus.
+
+And for embedded systems, actually, USB is not that common because USB protocol is actually quite, uh, heavy.
+
+Um, I'm sure all of you heard about. You are right.
+
+That's one of the first, uh, serial bus that you've come across, right?
+
+Only 3 to 4 wires, and you can keep sending as many data as you want.
+
+Okay. So I o components is also a big issue.
+
+Right. And also if you want to add more sensors, every sensor will occupy certain I o buses I o pins.
+
+Right. Either you're using analogue sensors, then you need to use the ADC pin,
+
+or if you're using digital sensors then it will be on one of the peripheral bus Either spy you are the eye to see or similar things like that,
+
+which I'll give you an example later on. So, so that's one of the things that you think about.
+
+And also bearing my, uh, for embedded systems, very often it doesn't allow you, it doesn't support that level of software complexity.
+
+Some of the microcontrollers can't even do a floating point computation, right.
+
+Some some microcontrollers doesn't support multi-threading. Okay.
+
+So so, you know, there are different levels of microcontrollers that you can actually select depending on your application requirements.
+
+Okay. Again security. This is becoming a more, uh, increasingly, increasingly important topic.
+
+Um, because now there's more and more devices are measuring critical data.
+
+Okay. So for example, your wearable device measuring your vital signs.
+
+You probably don't want other people to be able to know your blood pressure. A body temperature.
+
+A lot of things can be inferred by those data. Right. Uh, and for example, you know, smart grid power system.
+
+Uh, sensor network. You probably don't want other people to be to be able to.
+
+To be able to tap into a power system control network.
+
+Right. Then that means people can actually bring down your power plant.
+
+Um, which also happens. Um, but, but but security is becoming more and more important.
+
+Right. And, and and as a designer, you just need to bear in mind.
+
+There's always a cost. There's always an overhead. Depending on the level of security you want to incorporate.
+
+Whether it's, you know, encryption, software authentication.
+
+All the security measures will have some overhead towards embedded systems design.
+
+Okay. Okay. Any questions so far.
+
+Again, you know, like I said, you can, you know, relax.
+
+You know, feel like you're just listening to a story, right? I'm not examining you.
+
+You know, you don't need to memorise this, but I just want to show you this is actually a system level thinking, right?
+
+Every element in your design will interfere with each other.
+
+Okay. Cool.
+
+Oh, gosh. Okay. Um, it's already 352.
+
+Okay, I'll. I'll. I have a few more slides. Just bear with me.
+
+We have two hours anyway, so I probably wouldn't give you a break, but, you know, you can probably leave, like, you know, 40 minutes earlier.
+
+So cool. Um, so I just want to run you through, uh, um, the node architecture for embedded device.
+
+Okay. Just about all embedded devices are having those sub subcomponents, so so so so this is actually pretty common for embedded systems.
+
+Okay. So for embedded systems most likely you will have these four subsystems okay.
+
+Sensing processing communication and power right.
+
+These are these are you know the four subsystems that you know you can probably find almost all embedded systems.
+
+Right. Safely speaking. Okay. So this is a this is a very common, um block diagram.
+
+Okay. So you have the processor subsystem, the processors, you it can be a microprocessor.
+
+It can be a microcontroller okay. And you have the sensor subsystem.
+
+Again the sensor subsystems can either be analogue or digital.
+
+Right. If it's an analogue sensor it needs to go through ADC okay.
+
+It can go through ADC before or after the ADC can be on the processor subsystem or on the sensor subsystem.
+
+Sometimes the ADC will also give you peripheral bus connectivity, then it can be on the sensor side.
+
+Okay. Of course the easiest way is for is to use a digital sensor.
+
+Then the digital sensor will incorporate peripheral bus directly as part of the sensor.
+
+Right. So now there's more and more you know digital sensors are becoming more and more common.
+
+You know, you don't necessarily need to use analogue sensors. And then there's a communication subsystem.
+
+Okay. Usually there is a network network processor. Sometimes the communication subsystems can also be embedded in the processor subsystems nowadays.
+
+So that the the communication system is also part of that processor.
+
+Okay. It's doable. But if you zoom out there's still a processor and a communication network processor.
+
+Okay. What's not what's usually not there is the actual Physical radio part the antenna.
+
+Right? It's very unlikely that you can have the antenna as part of the chip.
+
+It can be done especially with Bluetooth, but but mostly antennas.
+
+They are outside. So that because the antenna design actually determines how how long, how far he can reach.
+
+Right. The smaller the antenna, the shorter the distance. Okay.
+
+So usually antenna still, um, external.
+
+Okay. What's not shown here is the power. Okay. Power is usually less relevant to the operational side of things, but power systems differently there.
+
+You in any case, need a power subsystem to, uh, support the operation of all the elements, right?
+
+For communication, for processing and for sensing. And it's not unlikely that different parts have different power management system.
+
+Right. Maybe the sensor will need a different Voltage compared to the processor itself.
+
+Okay, so power system itself can be a challenge to design in a block diagram.
+
+Why do we have like accelerator like right next to ADC in the sensor subsystem but also like accelerometers.
+
+Yeah. Accelerate accelerometers accelerometer accelerator.
+
+Yeah okay okay. Yeah. So it's a sensor measuring acceleration.
+
+Yeah. It's not like digital acceleration. No no not like DSP or FPGA.
+
+Yeah yeah yeah. No I mean if if it's an accelerator it's usually part of this.
+
+So the processor subsystem again it can be very complicated in old days especially in the old days when the computational power is a problem.
+
+It's very common that you have a coprocessor here, right.
+
+It doesn't need to be just one processor. You can have a power efficient mem processor and you can have a, you know,
+
+more powerful code processor to handle all the computationally intensive process.
+
+Pico and Mico like Intel. Intel does that.
+
+I'm going to show you an example. Intel. Intel was very famous about doing that.
+
+Um, you know, they usually have a DSP, uh, uh, core processor.
+
+Uh, and it's very likely that people can have an FPGA co-processor so that, you know,
+
+it becomes a reprogramme, you know, with programmable, uh, embedded device.
+
+Um, but if you are aiming for power efficiency, then, you know, core processors definitely allow more power hungry.
+
+Okay. Yeah. I won't go through a lot of details for the next few slides.
+
+I just want to show you how many sensors you know Available is available.
+
+And this is not even like, you know, like 10% of the sensors that, you know, embedded systems engineer might need to deal with.
+
+Um, but but yeah, we do have a lot of different sensors. And in this project, in the project that you will be doing, you will be using accelerometer.
+
+Okay. Uh, a sensor that's measuring acceleration. Okay.
+
+Because we want to detect steps. Okay. So acceleration is one of the best ways to measure vibration.
+
+Or if you double integrate acceleration you will get distance right.
+
+So measuring step or measuring physical movement distance acceleration.
+
+Accelerometer is a very common sensor to use and it's actually available in all mobile phones right.
+
+That's actually how, you know, accelerometer gyroscope is actually how they actually sense the mobile phone orientation.
+
+Okay. Um, the second sensor that you will be using is, uh, magnetometer, magnetic sensor.
+
+Okay. So the magnetometer will allow you to determine the absolute orientation of your device.
+
+Okay. My next lecture, I will show you why it is so important to know the orientation, not just the steps.
+
+Right. Orientation actually means a lot when you want to know, uh, the device's location.
+
+Okay, so these are the two, uh, sensors that you will be using in, uh, project two.
+
+Okay. So processor subsystems. Um, so everyone here knows the difference between microprocessor and microcontroller.
+
+That's from part two. Yeah, yeah. 20292012 and I will repeat that.
+
+But that fundamental knowledge is from 201. Yeah. What's the difference between microprocessor and microcontroller?
+
+Well, I'm more peripheral one guy. Like, maybe like GPU.
+
+And then depending on the application like system on chip is like very complicated.
+
+So microcontroller is just a processor a microprocessor is just a processor.
+
+Okay. That's the fundamental difference. Microprocessor is just a CPU core.
+
+Okay. Microprocessor doesn't have much of other peripherals. Right.
+
+Whereas microcontroller is an integrated system. Microcontroller will have Ram.
+
+It can have non-volatile memory like flash in it.
+
+It will be able to support different peripheral serial buses with microprocessor.
+
+Doesn't do that. Okay. So microcontroller is more commonly used in embedded systems.
+
+If you use a microprocessor then you need to have a lot of other chips, other chipsets to actually support other peripheral operations.
+
+So if you talk about, for example, an actual desktop computer, you know.
+
+Apart from the CPU, there are other chipsets actually, that's on the motherboard.
+
+That's handling all the other peripherals. Right. For example supporting.
+
+PCI express and all that kind of, uh, you know, external devices.
+
+But microcontroller, everything is integrated. As much as it can.
+
+Okay. So usually microcontrollers are much smaller and they're much more power efficient.
+
+Okay. So smaller size power efficiency and cheaper.
+
+Okay. Microcontrollers are inevitably without doubt, cheaper.
+
+But obviously their computational power is, you know, not as fast as microprocessor.
+
+Okay. And they will have different memory limitations.
+
+Right. Because for microprocessor you can decide you know, you can add external memories.
+
+You can you can expand your memory size as much as possible. But microcontroller.
+
+Usually the memory size comes with the chip.
+
+If you decide to buy that micro microcontroller, that is the memory size you're going to get, you can't change that anymore.
+
+Okay. Um, and communication interface, this communication interface I mentioned in here.
+
+Now the wireless communication is the zero bus. Is the peripheral bus within the microcontroller.
+
+Okay. Now the most common serial interface obviously Uart.
+
+You know, I hope most people heard about that. Uh, and then the second most common is, uh, zero peripheral interface SPI.
+
+So SPI bus is also a very common serial bus interface.
+
+And the third most common is I see inter integrated circuit.
+
+Okay. All these three serial buses have its pros and cons.
+
+Okay. You are everyone used that probably in very early, you know, design courses.
+
+You are a serial bus. All the data goes on.
+
+Two copper wires. Okay. You can you can transmit, you can receive.
+
+Right. And you can transmit and receive at the same time. So it's full duplex.
+
+You can send and receive at the same time. The limitation of Uart is it's a point to point network.
+
+Okay. If you're just connecting one device to another device you are very good, right?
+
+But if you want to connect multiple devices together, then you cannot do that.
+
+Okay. Uh, SBI is the next most common one.
+
+Okay. Among the three, you are IUCN, SPI. SPI is the fastest serial bus.
+
+Okay. So if you want to have if you want to support another subsystem that requires faster speed, for example.
+
+The communication system. Okay.
+
+You want to ensure that the communication between the communication subsystem and the processor subsystem is fast enough.
+
+Then most likely you will choose SP. You won't. You won't choose Uart, right?
+
+Because you want to ensure that wireless communication will be handled smoothly.
+
+Right. You are has a speed limitation. But the challenge the limitation of SPI while SPI allows multiple devices.
+
+This is the typical SPI configuration. Okay so it has a clock pin.
+
+So master and slave are actually synchronised. They share one clock.
+
+Uart doesn't share a clock. You are asynchronous. Okay. And then it has master out slave in mostly and master in slave out.
+
+found myself. So a transmitter and receiver. Okay, so it's also full duplex.
+
+It can send and it can receive at the same time. But the difference is it has this, um, additional pin called chip select.
+
+Okay. The master will decide when I want to activate the communication with a with a specific slave.
+
+Right. Only when the chip select signal is activated then you can use this communication lines.
+
+Okay. So at any point in time you're still doing point to point communication. But SPF does allow you to support multiple devices okay.
+
+At a very fast speed. Now of course the limitation is this chip.
+
+Select every additional device you need to have an extra pin okay.
+
+But it does allow you to submit to to um to support multiple devices.
+
+Now SPI will be the zero bus that you will be using in project two.
+
+You don't need to know this level of detail. Okay. The good and the bad nowadays is embedded.
+
+Engineer. You you don't need to know a lot of lower level details because, for example, STM,
+
+the company have already provided a lot of very well developed libraries like the the device drivers.
+
+Right. So the device driver is always there,
+
+but using the device driver to access the sensor to get the sensor data and to understand what the sensor data actually means, is your job.
+
+Okay. So this is what you need to do as the first step of your project tool.
+
+Okay. Once we give you the once we give you the, um, the device, uh, very soon you need to start reading the datasheet.
+
+You need to understand how the sensors are operating. How does the sensors record its own data?
+
+How do you access sensor data using the given SPI bus?
+
+Convert the sensor data into the right interpretable value.
+
+Right. That will be your acceleration, right?
+
+Based on that acceleration. Then next stage you can work on a step detection algorithm.
+
+Okay. Now for completeness I see the difference between iSCSI and SPI is that I see is a dropping bus.
+
+You don't have chips or that all the devices are sharing the same, um, the same computation bus.
+
+Okay, so if you want to connect to a lot of devices, but you don't want to use extra pins, I see is the way to go, but it is slower, right?
+
+SPI allows you to communicate at a faster speed. Okay, so I just want the last few slides here with me.
+
+Um, just want to show you some examples. This is one of the early wireless sensor node okay.
+
+And it's actually a very rare sensor node.
+
+It was designed with Intel processors. That's a very early stage Intel processor X scale.
+
+Maybe many of you didn't even heard. I have never heard of this, uh, Intel processor.
+
+Uh, the fancy part about X scale CPU is that it can actually change its operating frequency.
+
+So if you want more processing power, you can, you know, increase the processing clock frequency.
+
+So you can actually process a lot more data.
+
+But if you want to consume less power, you can actually reduce your frequency to consume less, uh, less power.
+
+Um, but interestingly, this, uh, sensor node also has a digital signal processor.
+
+It has a DSP designed to process those, you know, high demand sensor data.
+
+Okay. So this is the processing subsystem. And you see there's also a communication subsystem.
+
+It's always there. Right. And it has the uh so this so this is actually a microprocessor right.
+
+So that's why it doesn't have any of the memory that it needs additional memories.
+
+And there is a power system power management subsystem. And this IO is actually the sensing subsystem that we're referring to.
+
+So this IO supports SPI Uart uh and it doesn't have I super see here but it has I squared s.
+
+That's a variant right. So this peripheral bus, this interface system allows researchers to connect to different types of sensors.
+
+Okay. So just about all embedded systems will have those subsystems, uh, just for any type of applications.
+
+Okay. So see this main processor, the x cal CPU.
+
+It actually allows you to do dynamic voltage scaling so that you can control the the clock frequency and also the power consumption.
+
+Can you vary the voltage and do DFS like dynamic voltage.
+
+I don't know about this processor though. Maybe not this processor because this process is very old.
+
+Uh, Intel started doing this, you know, in, in, in a lot of their later stage processor as well.
+
+Um, but yeah, I'm not sure whether they're still doing that now.
+
+Yeah. Cool. Um, and I just want to show you a different variant.
+
+Okay. So this is the sensor node that we design in-house, uh, in Auckland Uni.
+
+So what you can see is it's still the same thing right here.
+
+Uh, instead of using a microprocessor. We're having a microcontroller here and a micro.
+
+In addition to the microcontroller, we also have the the communication part.
+
+Okay. Here you can see this is the antenna a very small antenna.
+
+Okay. And then you also have the sensing system. So here we have the accelerometer.
+
+And magnetometer. This specific device is designed as wearable devices.
+
+So we're really trying to make it very small.
+
+Um but even that we still have an interface, you know, to expose the zero buses in case if you want to connect more additional sensors.
+
+But, uh, the processor, the communication, um, and there is a power here.
+
+And then the sensing part, it's always there. Right? For embedded systems, there's always the subsystems.
+
+Okay. Oh, wow. That's my last slide. Cool.
+
+Um. I, I'm hesitating whether I should continue on.
+
+Okay. Maybe now, if I continue on, maybe I could give you a break. Uh, I won't continue on to the next, uh, like, set of lecture slides.
+
+I will, I will resume next Wednesday. Okay. Okay, cool.
+
+Thank you very much. And I'll see you next Wednesday. Okay.
+
+Thank you. Okay. Thank you.
+

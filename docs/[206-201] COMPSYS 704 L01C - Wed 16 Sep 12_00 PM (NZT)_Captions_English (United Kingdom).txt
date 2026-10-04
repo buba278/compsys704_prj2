@@ -1,0 +1,1051 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Is going to go and you put that into the council. They charge you a lot of money and then they'll process that,
+
+and they might ask questions if they're not happy about something and say, well, what about this?
+
+What about that? You respond to those and then hopefully they'll give you a consent.
+
+So did you see the organic vineyards have a higher, uh, risk of.
+
+No no no no neither neither.
+
+But with their organic or not, they're still going to have hydraulic loading and body loading in that effluent.
+
+So it doesn't matter if they're clinical or normal or non-organic.
+
+You're always going to have those two factors that are um, you've got to treat and you don't want getting into the surface water.
+
+So every winter when we're or a winery or vineyard has to, uh, get through the council.
+
+Yes. Yep. Um, unless or unless you're discharging to a sewer, in which case it'll be the, um.
+
+It won't be the. It'll be whoever's looking after the wastewater treatment. Yeah, you still have to.
+
+You've got to apply for it. Yeah. That's right. Yeah. Always. You're not allowed to do anything without a consent.
+
+You'll learn that. Yeah. That's right. Thanks a lot.
+
+Thanks, team. Yeah. Good questions. Thank you. I hope you learned something.
+
+Yeah, it is a bit of a rush. It'll make sense. Even more sense when we get down south.
+
+So. Yeah. I'm gonna have a good cause.
+
+I think you got a good teacher. Yeah. Jason J.
+
+Yeah. He's a good man. Yeah, they got no option to say that. Well, you standing here, so they had to say that.
+
+That's right. Yeah. That's a pass. Yeah. Um.
+
+Or initially, just in case. I'm sure there's an icon here that says lecture theatre recording.
+
+That's what you click on to start with. All right, so, um, I'll see you, uh, on Friday for the, um.
+
+Uh, but guess what? Oh, I also have a question for you regarding the new the, um, the assignment, Jim, the compliance one.
+
+Oh, yeah. We got the email with the information.
+
+Information. And that is usually like, obviously that's information that we use.
+
+Can we outsource as well? Sure. But it's like mainly a summary because.
+
+Yeah. Because that's the information the industry work on okay. So it's like a summary of that information.
+
+Yeah. That's kind of what a compliance. Yeah I mean I wouldn't start expanding it out of that.
+
+It's really about it being able to explain that and understand it. Okay.
+
+Yeah. So we're just providing like an explanation for like the other three people to understand what are.
+
+Yeah, assigning the key things and the implications and and and be able to answer questions.
+
+Yeah. Yeah. Okay. Yeah. Thank you. Yeah. I'll walk out with.
+
+Oh thanks for Because I'll get lost. Yeah, I can get out of it. Thank you.
+
+Oh! My God.
+
+Yeah. What?
+
+Do you get here? I can't.
+
+Tell you. Can you tell me?
+
+No need any more. It's two people.
+
+Yeah, I think it's good.
+
+I mean. I really want.
+
+To. Yeah.
+
+Bird groups will protect you. Yeah, I'm. Sorry.
+
+Say that again. The groups in canvas aren't showing up for public.
+
+Two. Really? Yeah.
+
+Yeah. Oh.
+
+That's weird. Can you can you go to, um.
+
+Can you go to, uh, groups to show people to show me?
+
+Project one groups. And then those two groups addressing some people.
+
+Yeah, yeah. No, no projector too. Oh.
+
+That's weird. I wouldn't make it visible. I don't know what else I need to do.
+
+That's bizarre. Okay, thanks for letting me know.
+
+I will try to figure out what, um, what has happened.
+
+That doesn't make any sense. Oh, that's.
+
+That is really weird. And I just literally see someone created themselves, uh, a group tap, um, in Chinese because they can't find the projector, too.
+
+We have to. Yeah. No, I think this is just a this is just a test because the the group name in the group name in that thing called six, six, six six.
+
+Yeah. Maybe something, maybe something seriously wrong.
+
+I don't know, I think this is something I need to contact the canvas group because you can see group project one.
+
+Yeah, yeah, but you can't see project two. I don't know why.
+
+I. Took two blocks away.
+
+And I can't even delete that. I cannot delete it.
+
+I can't delete that. That.
+
+That is. That is bizarre.
+
+Can you try again? Can you just refresh the page and see if it's. Yeah.
+
+Still nothing. Okay. That is.
+
+That is just weird. Oh, wait. Hold on.
+
+Wait wait wait. I think, I know, I think I might, I might know why.
+
+Can you try again? There is a one group, right?
+
+Okay. Yeah. So I know, I start knowing why. So I need to create all the subgroup names.
+
+So I need to create group, not group one. Group two, group three for the group set to be visible.
+
+Okay. Yeah. That will be done after the, uh, after the lecture. Yeah.
+
+Cool. Thanks for letting me know. Okay.
+
+Um, let's get started. Um, so is this usually how many students attending lectures?
+
+Probably roughly. Okay. All right. Um, again.
+
+Um, you guys already know me. Um, so, um, you also know that I don't like giving a lot of lectures, so my lecture will be very brief.
+
+Um, and you guys also need.
+
+I mean, we're mindful about your workload in the second half of the second semester, right?
+
+So this is already week seven. Okay. So just to give just to give you a run through of how the rest of the course will work.
+
+Uh, my part is basically another project. Yeah.
+
+So I'm going to hand out a project this week, and I will hand out the kit to the project groups next Monday's lab.
+
+Okay. So please make sure that you come to next Monday's lab to get your kit.
+
+Um. And Monday and Tuesday will be a get started lab to help you to learn how to use that kit.
+
+So it's basically arm based embedded kit that we design in-house.
+
+Um, and the project is actually doing a human step detection device.
+
+So you need to design a step detection device using the kit that will give you.
+
+And at the end of the project demo in week 12, uh, Tuesday,
+
+you need to show us that you can actually detect the steps and track the human orientation using that device.
+
+Uh, the reason I don't give you a lot of lectures in my part of the course is because this part is really tight.
+
+You literally don't have a lot of a lot of time left. Right. Think about that.
+
+Week A is the getting started lab week. Now you're going to be in Systems week.
+
+Most of you not you. You're going to be in Systems week when you come back.
+
+In week ten, we're going to have the internet interview, right? The internet interview.
+
+We want to make sure that you can actually read the sensor value from the from the device.
+
+Right. If you can't even read the censor value, forget about step detection, step detection, orientation detection.
+
+The second step you need to detect. You need to be able to read the sensor value from accelerometer and magnetometer.
+
+Right? So that's what the interview is going to be. That's already week ten, right?
+
+Wiki 11. You have another lab session by that week.
+
+We're hoping that you start implementing the step detection algorithm and orientation orientation detection algorithm.
+
+And week 12 you're going to do the demo right.
+
+Even without a lot of lectures I think this is already fast enough pace.
+
+Right. And we for the intro interview we also asked you to do some literature review.
+
+Okay. So you see in the project brief, I'm only asking you to read, like 3 to 4 papers.
+
+I'm not asking you to read 30 or 40 papers. Okay. I want you to read those papers.
+
+Know how the step detection can be done, how the orientation detection can be done so that, you know, to prepare you for your final implementation.
+
+Okay. So that's roughly what it is. So it's already quite tight.
+
+Um, um, my lectures because again, this course doesn't have, um, exams.
+
+Right. So my lectures are mostly, you know, relax.
+
+You know, listen for the information. Right. This information should be useful for your future career.
+
+And you can try to make use of the this knowledge in your project design as well.
+
+Okay. But again, you know, don't worry about memorising things at your stage.
+
+It's more about the concept, right? You're already part four. You know in two months time you know you're going to start.
+
+You might start working in a company. So you know, it's not about, you know.
+
+Memorisation is not our focus now. Right. So, um, I choose, uh, wireless sensor network as my, um, as my lecture context.
+
+Okay. Um, keep in mind, one of the main reasons why we want embedded systems is for mobility.
+
+Right. The reason why we want to make things smaller and smaller is so that it doesn't need to be tied to a certain location, like a desktop computer.
+
+Right. And and then, you know, as you will see in my lecture trays, once device start becoming small and mobile very soon,
+
+people start realising, yeah, if the device are not interconnected, a stand alone mobile device, it's not that useful.
+
+Right. Just imagine you know your mobile phone, right? It's tiny, you know, it has a lot of computational power, but it has no network.
+
+Right. Then, you know, all of a sudden, all the functionality stock cut in half.
+
+Right? So as soon as people you know can design things in a smaller fashion, they start realising, oh, actually, interconnectivity is also important.
+
+Otherwise a lot of functionality cannot be implemented. So embedded systems and wireless communication very often go side by side.
+
+Nowadays, it's very, very unlikely that you see an embedded system that has absolutely no wireless connection, right?
+
+All of a sudden all its functionality is gone. Okay.
+
+So this is why I choose wireless sensor network as a as my lecture context, because it kind of shows you the,
+
+the, the system level thinking and the design challenge that you need to keep in mind for embedded systems.
+
+And that has wireless connectivity.
+
+Okay. But before I start that, I want to introduce some concept called ubiquitous computing.
+
+Have you heard this concept before? No. Okay, so ubiquitous computing is.
+
+It's what we consider as the third wave computing. Okay.
+
+The first wave of computing is mainframe. Okay. So for people who know me, knows that I'm a big fan of computing history.
+
+Right. And and we're not talking very long time ago.
+
+Right. We're talking about 1960s and 1970s. Right.
+
+When when the size of a computer is basically larger than the size of this, uh, lecture theatre.
+
+Right. So that's mainframe computer. Uh, you rarely see it.
+
+Right. Mainframe computer doesn't tie to any individuals. Right.
+
+You submit your tasks to a terminal, almost like cloud computing.
+
+Now you submit your task or cluster computing. You submit your task to a terminal, and hopefully the task will be done in a queue, you know, in time.
+
+And then in the early 1980s, you know, personal computers start showing up.
+
+Right. The concept is okay now everyone owns its, you know, their own computer.
+
+Right. That device is tied to them, right? You can personalise the software.
+
+You can customise the software. You can customise the you the user interface.
+
+The machine is yours, right? Doesn't belong to anyone else. But at that you know not not not far.
+
+You know not you know, very far after the personal computer becomes available.
+
+This person, Mark Weiser, he's actually the research director of a research institute called Xerox Parc.
+
+Xerox Parc in the 1980s is like the Google nowadays, right?
+
+It's actually the top research facility in California.
+
+And this guy actually proposed an idea called ubiquitous computing, meaning that, okay, forget about personal computer.
+
+In future, the entity of the computer will disappear.
+
+Okay. Computers will start embedding into the physical environment.
+
+That's what ubiquitous mean. And for personal users, you don't actually see the computer you interact with its service.
+
+Okay. So actually this concept is what's driven a lot of the technology development for the, you know,
+
+the following, you know, 30 years up till now, he proposed the idea in 1989, almost early 90s.
+
+Um, and and originating from that, a lot of follow up concept was actually proposed, for example, internet of things.
+
+Okay.
+
+Because again, people start realising, okay, if I have, you know, computers embedded in the environment, there must be some interconnectivity, right?
+
+The device itself is forming like an internet. Okay.
+
+So internet of things initially was proposed to ensure that there is an interconnectivity.
+
+For extremely large scale system write systems with thousands or tens of thousands of devices.
+
+And then wireless sensor network is one of the core technologies for ubiquitous computing.
+
+Okay. And and and you wouldn't believe how fast the technology has developed in the last 50, 40, 50 years, right?
+
+Um, when microprocessor chip first become available, you know, people are still working on computer architecture.
+
+You know, Intel probably doesn't even exist at that time.
+
+And one of the, one of the, uh, the researchers were proposing a tiny processor, and his claim was that.
+
+And that claim got left in the conference.
+
+No other researcher believed in him at that time. He thinks that there will be billions of those microchips in 20 years.
+
+And then. And then it was recorded. It was recorded at that time.
+
+You know, one of the professors attacked him with that claim.
+
+So basically, what he's saying is every doorknob in the household will have a microchip in it.
+
+And that that researcher actually says, yeah, that's that's what I expect. No one believed him.
+
+No one believing him at that time. Now you're looking.
+
+You're going to a hotel. You know, every doorknob is car accessed.
+
+Every doorknob has a microchip in it. Right. So that guy's expectation actually become true.
+
+So the technology has actually advanced beyond a lot of people's expectation in, in, in, you know, and since then,
+
+the concept of ubiquitous computing or Internet of Things are actually borrowed and renamed in different research domains.
+
+Okay, so there are internet of vehicles. Okay. Nowadays with EVs, vehicles can be interconnected.
+
+You know, self-driving cars can be interconnected. They're precision agriculture, right?
+
+You have agriculture. You have sensors interconnected, sensing temperature, humidity, how fast the plant can grow.
+
+Um, their industry 4.0. Right. All the PLCs, you know, program, programmable logic unit, uh, are interconnected by industrial networks.
+
+Okay. So the same concept has migrated to different domains, you know, smart grid for power systems.
+
+All the power controllers, all the micro station substations are interconnected.
+
+So the same concept actually propagates through two different research domains already.
+
+Okay. And as a general, um, ecosystem, uh, now that we are getting more and more complicated distributed system, we start putting layers, right?
+
+You know, humans need to find a way to partition the system so that it's more digestible.
+
+So, you know, the most straightforward things is to make things hierarchical, right?
+
+Okay. So in the beginning, people start working on cloud computing.
+
+Right. Try to centralise things. Right.
+
+To create a very big data centre. Very powerful. You can submit your your data to it.
+
+You don't need to you don't need to manage your own device. Right.
+
+Cloud and data centre will manage the device for you. All you need to do is just create a virtual machine and run your application there.
+
+Okay. It's it's very good for certain applications, you know, like web servers.
+
+You know, how many small companies actually want to host their own web server and do all that maintenance?
+
+It's a burden, right?
+
+So initially, uh, that's the first piece of, um, puzzle that people start creating, you know, to establish the interconnectivity.
+
+And then people start realising, oh, um, if we actually want to do everything in the cloud, the cloud will be overwhelmed.
+
+Okay, that's one thing. And if we want to actually transmit all the data to the cloud, the communication network will will be overwhelmed.
+
+Right. And also, uh, if all the data need to go to the cloud, do the processing and get the decision back,
+
+that latency will kill off all the local services because it's too slow.
+
+Right. So it will kill off the local applications.
+
+So then people start realising, oh, actually, you know, computation, maybe we shouldn't do all the computation in the cloud.
+
+Maybe that's not the most efficient way to to do things.
+
+So people start thinking about, okay, how can we do computation closer to the edge of the network, closer to the end user?
+
+Right. So then there are two new concepts developed.
+
+One of them is edge computing. Right. You're literally doing computing at the edge of the network.
+
+Uh, very resource limiting hardware, you know?
+
+True. Embedded systems most likely has computational constraint memory, you know, data storage constraint and power constraint okay.
+
+But because that device is at the edge of the network, it's with the end user, it will inevitably has the fastest response time.
+
+Right.
+
+Because well, I mean if you do the processing locally and directly respond, you save all the uncertainty and latency for the communication, right?
+
+Nothing. Well, I mean, unless the device broke, very little thing can go wrong Or as a compromise between the cloud and the edge.
+
+That's the fog area. Okay. That's during the relay node.
+
+During the routeing node. You can do computation there.
+
+Okay. So there's also a concept called for computing. Right.
+
+Again all very similar concept but has a slightly different context.
+
+Okay. Oh and if you want to know anything more.
+
+Feel free to just ask questions. Right.
+
+So wireless sensor networks um, basically multiple devices, multiple sensing devices interconnected to form a network.
+
+And they work cooperatively very often.
+
+A wireless network is perceived as a whole, right? Perceived as a single thing.
+
+Um, you know, very few cases, very few occasions, um, the users will consider and trying to connect individual sensors directly.
+
+You know, it's usually there's usually a unified interface that integrates.
+
+Wireless sensor network as a single system for external users.
+
+Now, it was not always. Wirelessly connected.
+
+Okay. This is something that I want to that I want to show you. Again, like I said, I'm a big fan of histories.
+
+Um, this is this big enough, right?
+
+So you wouldn't believe, you know, um, researchers start working on, you know, embedded.
+
+Small electronics, microelectronics. Uh, since a very long time ago.
+
+Right. So the first sensing device, a distributed sensing device.
+
+And the reason why. I specifically call this distributed sensor network is because that sensor network is not wireless.
+
+That was one of the very few early stage sensor networks that's not wireless.
+
+Okay. And it's done by military. So you can imagine the reason they can do it is because they have a lot of money.
+
+You can imagine, you know, if you want to have a distributed sensor network that goes,
+
+I don't need to make it far, just a few hundred metres with 5000 nodes.
+
+You can you should try and imagine how many wiring cost to connect a distributed sensor network.
+
+And in reality, in real world, 300m is not a thing, right?
+
+If you want a kilometre is also not a thing, right? Nowadays we're talking about network that expends ten, you know, tens or hundreds of kilometres.
+
+A few hundred metres is not even like, you know, we don't even consider a challenge.
+
+But at that time it was a tremendous breakthrough. You know, you have a you have a sensor network that covers a few hundred metres, right, by wiring.
+
+Okay. So that's the first one. And then, you know, that's already a decade later that, you know,
+
+academic researchers start working on it and people start working on actual wireless wireless communication.
+
+Right. So no strings attached now, no strings attached. Also brings another challenge.
+
+That means you're not plugging your computation into mains power. Right.
+
+It most likely will be battery powered. Right. It would be very it would be happen though.
+
+But it's very silly that you have a wireless device and it needs a power cord connecting to the mains plug.
+
+Then what's the point of having a wireless? You're still constrained by the power cable.
+
+Right. So that's what I mean.
+
+You know, embedded device and wireless communication are usually going side by side because there are some people start realising, oh, this is crazy.
+
+I have a wireless device, but we're still constrained by the length of the power cable.
+
+Um, and then, close to early 2000, UC Berkeley started working on a project called Smart Dust.
+
+They're literally trying to push the microelectronics and embedded device to tiny, tiny like, maybe just the size of a fingertip.
+
+Um, um, and they call it smart dust because they want it to be the size of a dust, right?
+
+Um, we also started doing that, um, at a later stage.
+
+Okay. So these are actually embedded systems that we design in-house.
+
+And you won't believe it's hard for you to imagine how hard it is to make this kind of device.
+
+You know, in 20 or 20 years ago at that time, you know, PC, PCB making and assembling the PCB at such tiny scale, they were all challenges.
+
+Okay. And at that time, also the, uh, the computational power and the power consumption was also a challenge.
+
+So this micro Controller, which was published.
+
+Released by Texas Instruments. It has 256kB.
+
+Flash Ram. I think it was 256kB of Ram, and we actually managed to fit in a TCP, UDP, IP protocol stack onto that microcontroller, right?
+
+For a lot of software engineers, 256 kilobyte range is unimaginable.
+
+You can barely fit anything into 256kB. Forget about a network stack.
+
+That really took us a lot of, you know, scratching the head to try to feed the entire network stack to such a small memory footprint.
+
+I mean, don't forget, you know, that's just a that's just the, the the service code, right?
+
+You still need to have your application code, right? That's just a service called providing the network communication.
+
+You have you have a lot of other things. And forget about doing machine learning.
+
+There's no machine learning at that time. Um, and then everything cost power, right?
+
+Wireless communication is probably the most power hungry, um, element of an embedded systems and and you and and and it's a surprise to find out.
+
+Actually, memory might be memory. And sensing might be the second most power hungry element for embedded device.
+
+In fact, the more memory access, the more memory read and write you're doing, the more power consumption you're causing.
+
+At that time, we didn't know that. We think, okay, it's already on board, right?
+
+You know, it should be very power efficient. Not necessarily the case.
+
+Right. Memory access is also power hungry. And you can imagine, you know, this is a $0.50 New Zealand.
+
+New Zealand. $0.50. Right. And that's the that was the lithium ion battery that we were using at that time.
+
+So at that time for this device we stopped battery.
+
+This device can survive for six hours not extremely long.
+
+But you know that's already a breakthrough at that time. But if you put it in any real world application, that's far too short, right?
+
+Right. And then, you know, we you know, the technology is improved and we also improve our design.
+
+So this design is different from the previous version. Okay.
+
+So this is already the fifth generation. And the microelectronics and the microcontrollers are becoming far more power efficient.
+
+The wireless communication will also becoming far more power efficient.
+
+And with this one with a small coin cell battery. If you only do hourly communication, this device can actually survive ten years.
+
+Okay. So you can actually see and this device was like, you know, probably 6 or 7 years after the design of the second generation.
+
+So in seven years, the technology has advanced so that we can go from six hours to ten years.
+
+Okay. That's a tremendous jump, right. Um, but again, you know, this is just the technological side.
+
+There's still a lot of design challenges that, um, you know, you need to you need to be aware of.
+
+And when you are designing an embedded system or any real world system, you should actually keep those in mind.
+
+Oh, and another topic I want to cover is, uh, the communication side.
+
+Um, of course, you know, in the old days. Um, researchers do write their own protocol, right?
+
+You can actually write your own protocol, uh, and network stack if you want.
+
+But more and more since the network are becoming so complicated, um, driven by professional bodies like Tripoli and also,
+
+you know, industrial, you know, company alliance, for example, Bluetooth.
+
+Bluetooth is actually a communication protocol made into a standard by an alliance of companies.
+
+Uh, there are few very, very well known wireless standards, you know, communication standards, protocols released.
+
+Okay. The first one is um, 02. 11.
+
+I'm sure everyone heard of that. What? What's that? What's AoE 2.11?
+
+Anyone want to take a guess? So the protocol that is the Wi-Fi standard.
+
+Okay. And every sub, every subversion, there's a letter attached to it.
+
+Right. So, you know, the first version is 802. 11 A.
+
+That was a very old, very early stage Wi-Fi. I can't even track what is later now.
+
+Is it I or H. You know, it's it's it's it's it becomes very advanced now.
+
+Okay. But fundamentally that's IO2 point 11 standard um, that already spanned across multiple communication layers.
+
+Right. Have you guys, have you guys done software age 364. You have done that.
+
+So do you know, do you know the the layers of communication protocol stacks?
+
+You know, you you have physical layer. You have medium access layer.
+
+Yeah. Link layer is, you know in relation to Mac layer. Right.
+
+And you have network layer, you know, the overall seven layers I don't remember all seven of them.
+
+And the top layer is the application layer. Right. So many of that um, you know defines the bottom layers.
+
+So that to ensure That every device can talk to each other.
+
+Right. That's that's that's one of the beauty of having the standards.
+
+Believe it or not, in the first version of Wi-Fi, because that was the first version.
+
+Actually, many Wi-Fi chips released by different companies can't talk to each other.
+
+Because every company was trying to do something slightly differently on their own.
+
+And at the end of the day, even though you claim, okay, I'm using, you know,
+
+Wi-Fi version one device can't talk to each other when the device when when the network chip is actually released by different companies.
+
+That happened at certain stage. Okay. So that again shows you how important it is to have a standard.
+
+And everyone follows a standard. Right. And this one is probably less heard of A0 2.15.4.
+
+Anyone want to take a guess? What this.
+
+What is this used in? Is any one of you interesting home automation products?
+
+You know, Xiaomi products, Philips products, you know, lights that you can turn on.
+
+Have you heard of about Zigbee? No.
+
+So Zigbee is one of a low data rate sensor network protocol.
+
+Okay, so this is actually the bottom two layer of Zigbee.
+
+Have you heard about protocol called thread or matter?
+
+If you if you if you keep in mind these words, you know,
+
+at some point if you go to PBX website and you try to see those home automation devices and see what communication they're using,
+
+you know, Zigbee thread matter, they are the the low data rate,
+
+the low data rate communication protocols that makes use of this, uh, standard at a lower level at a physical impact layer.
+
+Okay, UTG use layer protocol to use a higher level.
+
+MQTT does not depend on this. Okay, MQTT can sit above Zigbee and thread.
+
+Yeah, MQTT is closer to application layer now.
+
+Yeah okay. Yeah. So so again this true.
+
+Or if they have different very different ideas in mind. Okay.
+
+The L2 point level was targeting longer range uh much higher data rate for example video streaming applications.
+
+And obviously it has a much higher power consumption.
+
+Uh, if you, if you, if you look at IP, IP packet, you know, a packet from an IP network, you will see that packet is very complex, right.
+
+The header might be four bytes. Alright already. Right.
+
+The header is just the address. It's not even the payload. It's not even the data part.
+
+It might be already four bytes, right? For for low data rate communication network.
+
+This is an absolute waste, right?
+
+I mean, for low data rate, the entire packet might be 16 byte.
+
+There's no way you can spend four bytes for the header. Right.
+
+And header is not even the only overhead right. There's header and there's the closing bit and there's security.
+
+And you know there might be encryption keys.
+
+And at the end you realise oh there's only like you know 30% of the packets actually for the data payload,
+
+which is very different from low data network standards. They want to maximise the payload as much as possible.
+
+And they don't want to send a very long packet because everything costs power, right.
+
+And everything costs time. Okay. So the data rate is much slower.
+
+Okay. They're not targeting video streaming. They're targeting sensing sensor data.
+
+You know, like a the temperature or, you know, your motion data.
+
+Um, not like streaming a high resolution video. Okay, so they're targeting low, low power consumption.
+
+Um, and they're actually in a lot of real world application right now.
+
+Way more than 20 years ago. 20 years ago, when we just started this.
+
+Uh, you come, you can barely find anything in the market that make use of this kind of communication networks.
+
+But nowadays, you know, it's all over the place, right?
+
+And and since we're talking about wireless communication, one thing we cannot avoid is the network architecture is topology.
+
+How do you connect all the devices together? Right.
+
+It needs some. It needs to be interconnecting an orderly manner so people know how to find each other and start a communication.
+
+Yeah. Okay. So the two simplest, um, communication architecture.
+
+The first one is Star Network. Okay, so Star Network.
+
+Uh, as the name suggests, it's like a star. There's one single central node.
+
+Every device. Talk to each other through this node. Okay.
+
+So this node, this end user node doesn't know how to reach any other end user node.
+
+It only knows how to reach the central base station, right?
+
+It doesn't care what other nodes are existing. Write whatever communication that it wants to make.
+
+It will talk to the central node and the central node will forward it out.
+
+Okay. So this is what we call single hub.
+
+Okay. So there's only direct connection in Star Network.
+
+Okay. Now this my this my thing. You know um unrealistic right.
+
+Like, what kind of use can a star network have in reality?
+
+Believe it or not, it's actually, you know, quite popular in certain networks.
+
+Have you guys heard Laura when that's one of the rural, um, rural communication network.
+
+So, Laura, when another network called SIC Fox, uh, they actually adopt, uh, they actually adopt Star Network.
+
+Okay. So you have a single base station that talks to each individual and devices.
+
+So any device only talk to the base station.
+
+But the technological advancement they have achieved is they've met this single hub distance to between 10 to 20km.
+
+Right. So they've expanded the communication coverage. That's how in reality this network can find its use.
+
+Okay. But the downside of that network is although the coverage is very long, the communication speed is extremely low.
+
+It's almost like sending text messages. Okay, so it's like they're only allowing, you know, four bytes of data every 15 minutes.
+
+Right. Extremely low communication rate. Okay.
+
+But they can actually make the communication distance much longer.
+
+The consequences battery if it's transmitting over a longer distance.
+
+It does. That's that's why that's why it doesn't want you to do transmission very often.
+
+Right. And and and in terms of distance wise that communication is already very power efficient.
+
+Right. If you compare if you compare with, you know, anything in that physical distancing like a cellular network.
+
+LoRaWAN is far more power efficient. Okay. But the data rate is very small.
+
+It's very low. Okay. So that's one network topology.
+
+A more common network topology is mesh. Okay.
+
+So so so most of the IP network falls into the mesh category.
+
+Right. So basically a mesh network means every node can reach out to every other node, either directly or indirectly.
+
+Now if you want to do if this node want to reach out to this node then it needs to know the route.
+
+Right. So the problem the challenge of routeing comes in.
+
+So you need to you need you need to have node that can do relay.
+
+Okay. And you might need to have a higher level node that has a routeing map to tell okay.
+
+Oh you want to find that guy. This is the path you should take.
+
+Right. So the challenge of routeing becomes in place.
+
+But mesh is capable of supporting a much more complicated network architecture.
+
+Right. And it also allows you to easily expand the network coverage.
+
+Right. Even though say this communication distance is limited in, say, 100m.
+
+This mesh network still allows you to cover, you know, several kilometres by relaying data through multiple nodes.
+
+Okay. So that would be a multi hop communication. Okay. Because the communication goes through multiple nodes it's very hard to.
+
+I mean this is a design trade off. Okay.
+
+Again in this course um one of the most important thing I want to tell you is we're not saying any technologies right or wrong.
+
+Okay. It all comes down to your application requirements and whether a technology is more suitable for that requirement.
+
+Okay. It's all design compromise. That's one of the most important things when you're designing embedded systems.
+
+Right. If you if you are only sending temperature data.
+
+Maybe you really don't need to have a Wi-Fi, right?
+
+If you're only sending, like, you know, two bytes every. And bear in mind, for example, taking temperatures.
+
+Example. How fast do you think the room temperature can vary the room temperature?
+
+Changing temperature is actually harder than you think, right? You know, changing room temperature in in 30s is already very challenging.
+
+Consider if you put on, you know, if you turn on your air conditioning, how long does that actually impact the room temperature.
+
+Right. So if you do temperature sensor, maybe sending two bytes of temperature data every five minutes will be more than enough, right?
+
+Every two two bytes every five five minutes. You really don't need a WiFi to do that, right?
+
+So, you know, if Wi-Fi is not existing in the original infrastructure, then maybe you can think of something more power efficient.
+
+Okay, again, old design compromise, right? So start going through some of the design challenges is something that you need to keep in
+
+mind when you're designing this kind of embedded systems with wireless coming connectivity,
+
+you know, wireless sensor network, essentially. So the first and most important thing is energy, right?
+
+Um, again, most of the embedded devices are battery powered, right?
+
+It would be it would be very, very strange to see, you know, you want to have a mobile embedded device plugged in to mains power.
+
+So if it's battery powered, uh, that creates a management issue, right?
+
+Either you, you know, first of all, you need to know whether the battery is depleted, right?
+
+That that requires monitoring effort, or you find a way, you either replace or you recharge, right.
+
+So replace. That's a that's a tremendous effort. I can I can I can share with you my personal, uh, experience.
+
+Uh, actually we, we, we deployed, um, some agriculture sensors.
+
+You know, monitoring, you know, soil, soil properties and, you know, air quality, air properties.
+
+We deploy 15 of them somewhere outside the outside world.
+
+You cannot imagine how much effort we need to put in to monitor the battery level and go in there, replacing the battery every 3 to 4 months.
+
+How do we locate each of the sensors? Because that's another issue, right? We actually we we actually have GPS tech so that we can find those devices.
+
+Because if you put it in a field or if you put it in a forest, three months later,
+
+you go to that same location, they all look different with all the weeds and, you know, things covering.
+
+And one of the funny, funny experiences another researcher told me is that they actually put a sensor device on a tree.
+
+Ten years later, it's inside a tree, right?
+
+A tree actually grew over that device. They couldn't find it.
+
+They were in. And then they were trying to test the signal strength.
+
+And, you know, the device is actually in the tree now. So.
+
+So replacing batteries actually a much, much. And keep in mind, I'm only doing 15 devices.
+
+If you want to do 100 devices or, you know, 500 devices, this is not humanly possible, right.
+
+You need to hire a few guys. Really just on a road trip. Keep replacing batteries.
+
+How does it happen in real life scenario? I think an actual world.
+
+Well, that's that's that's a good question. I don't think there is a I don't think there is a silver bullet right now.
+
+I don't think there's a solution yet. You know, harvesting.
+
+That's that's the second point, right. If you don't replace the battery then you need to find a way to recharge it.
+
+Right. Solar is probably the most common one. You have a big battery and you have solar panels.
+
+But then again, you know that cabling you can.
+
+You cannot avoid that, right? Or in the research side then a lot of people are still working on recharging the battery.
+
+Okay. Harvesting energy from different energy sources or you do wireless charging.
+
+Okay. But long distance wireless charging is still is still not that effective, right.
+
+Compared to, you know, very short distance wireless charging. Yeah.
+
+Um, or you make sure that your applications design in a way that is extremely power efficient.
+
+So once you deploy that sensor, it's a rubbish. You you make use of that sensing device for its lifetime.
+
+Once it's dead, it's dead. You deploy a new one. Right.
+
+And and bear in mind, it's not uncommon. Okay. Uh, actually, a lot of.
+
+I mean, the same thing happens with space, right? Once you shoot the the satellite up there.
+
+Satellite still have its lifetime. Right. Although much longer, you know, you know, ten, 20 years.
+
+But when satellite is dead, is dead, it becomes a space debris.
+
+Right. And that is actually one right now, one of the main challenges.
+
+Right. Because it covers a piece of sky, you know, then it covers one location of that orbit.
+
+Right. And if it's dead, it's going to occupy that space forever.
+
+It's not going anywhere. Right? It's keep on rotating. So it is a challenge.
+
+And then thinking about embedded device, if you put it into an environment that's a that's an issue.
+
+Right. Because you don't want to have electronics left in the, you know, environment forever.
+
+Right. That might cause pollution. So there's actually a lot of design challenges in that.
+
+Yeah. So you mean self exclusion doesn't help self explosion the satellite.
+
+Oh that's that. Well that's that's that's that's very dangerous because you have you have no control.
+
+Where? Well, there self explosion is not going to turn everything to atom level, right?
+
+You're just creating smaller debris shooting in different directions. So that's even worse.
+
+Right. Certain debris may go and hit all the other satellites surrounding it.
+
+Yeah. No, I mean, um. I mean, putting a satellite down in that manner should be done in a very, very careful way.
+
+Right. You can't if you can't contain the debris. You better not doing it, because then the debris will, you know, its space.
+
+It will travel in that direction forever until it hits something.
+
+Right. It's a it's vacuum space, so I don't I don't think that's a that's a very good idea.
+
+Yeah. And and for, for embedded systems it's even worse. Right.
+
+Imagine if you put a device in, in a forest. So some explosion might cause a forest fire.
+
+Right. That's definitely not something you should even think about. All right.
+
+Yeah. So? So energy is definitely a challenge.
+
+Okay. And and and and in terms of system design, one thing you need to realise is in embedded systems, everything's cross layer, right?
+
+A physical layer when you design a microelectronics okay, you want to make sure that electronics is actually as power efficient as possible.
+
+Right. Over the last two decades, you know, the microelectronic component is already very power efficient, right?
+
+You can use mOSFET that consumes micro amps of, uh, of of current.
+
+Right. But it was it wasn't always like that. So so, you know, component selection makes a huge difference.
+
+Right. So when you're designing the microelectronics you need to start thinking about power efficiency.
+
+And then on the networking side okay. The medium access layer is deciding how you can access the the the wireless channel.
+
+Uh, you want to avoid, uh, packet collision, right?
+
+You don't want to transmit when other devices are also transmitting, because then, you know, all the wireless message will be a scramble, right?
+
+And in the network layer you want to find out the most power efficient route, okay.
+
+And that's what makes routeing very hard, right.
+
+The most energy efficient route and the fastest route and the shortest route.
+
+The different things okay. The shortest route doesn't mean is the most energy efficient, right?
+
+It might consume a high power just to ensure if it's single hop, then it might need a higher power consumption.
+
+So so there's a lot of design consideration.
+
+Um, and you often need to think about whether the energy efficient, the most energy efficient route is actually the route you want.
+
+Okay. And on the operating operating system side, Especially for embedded systems.
+
+Very often embedded systems doesn't necessarily have operating system okay.
+
+It doesn't necessarily require RTOs. Very often it's just event loop.
+
+Everything's just executed sequentially one after another. And once you reach to the last event, you go back to the first.
+
+But you need to keep in mind. Smaller memory footprint sometimes means you need to read and write memory very often.
+
+Right. Because there's no there's no memory hierarchy for embedded systems.
+
+There's not like a level one cache, level two cache Ram, you know, and then disk, you know, embedded systems.
+
+Much simpler. The more memory access you do, the more power consumption will be.
+
+Right. So so you do need a operating system even. Uh, no, actually, it's better that you don't.
+
+It's better that you don't. And then you you keep everything inside a very small memory.
+
+If you can do that, that will be the most efficient way. as soon as you start having an operating system.
+
+Itself is consuming power. Operating system means it will have some common services, right?
+
+You know, for example, support threading or something like software features or switching between these tasks to that task.
+
+This kind of operating system management is already overhead, right?
+
+The fact that you need to have an operating system is already overhead. The best way is not having an operating system embedded system.
+
+You don't have to have you don't need to.
+
+You don't necessarily have in your project, the project you'll be doing the project to that device won't have operating system.
+
+You can run the operating system on top of that, but we don't want you to allow it.
+
+Is missing the point of accessing the microcontroller? Yeah, but a lot of operating embedded systems doesn't need operating system.
+
+Yeah. And then you need to think about security. Okay.
+
+Nowadays more and more people are starting to think about security since you're also doing wireless communication.
+
+Um, for example, if you have a device, a wearable device that's, you know,
+
+collecting vital sign data, you don't want people to access the vital sign data of your own.
+
+Right? So privacy and security now also become an issue.
+
+And if you want to do encryption again that's a burden, right.
+
+And then you need to think about okay does my microcontroller supports hardware encryption.
+
+Is there like a hardware encryption. Um, you know, unit in my microcontroller that can speed up the encryption.
+
+So, you know, uh, security is also costing power.
+
+And middleware is, you know, is not a very common term nowadays is again, it's talking about,
+
+okay, do you want to send all the data from the edge device to a central location,
+
+or can some redundant data be processed along the communication way to reduce the data you're sending.
+
+Okay. So that's also a consideration. Oh, gosh. Oh I'm already over time.
+
+Um, okay. Yeah. Sorry about that okay.
+
+So I'm going to start by at this point. Uh, again, you know, there's no I'm not going to examine you on that,
+
+but these are the the kind of consideration that you need to have when you're, you know, in future designing embedded systems.
+
+Okay. I'll continue on with the self-management tomorrow. Okay.
+
+Cool. Thank you. See you tomorrow.
+
+Okay. I'll get this done once I'm back in time.
+

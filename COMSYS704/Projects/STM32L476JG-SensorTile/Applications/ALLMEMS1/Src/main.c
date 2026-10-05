@@ -194,6 +194,22 @@ static void InitLSM() {
 
 static void startMag() {
 	//#CS704 - Write SPI commands to initiliase Magnetometer
+	uint8_t d[2];
+
+	/* I2C_DIS (bit5) must stay set; BDU (bit4) stops L/H bytes mixing across samples */
+	d[0] = 0x30;
+	BSP_LSM303AGR_WriteReg_Mag(MAG_CFG_REG_C, d, 1);
+
+	/* COMP_TEMP_EN, high-res (LP=0), ODR=100Hz, continuous mode */
+	d[0] = 0x80 | (0x03 << 2) | 0x00;
+	BSP_LSM303AGR_WriteReg_Mag(MAG_CFG_REG_A, d, 1);
+
+	/* Offset cancellation on */
+	d[0] = 0x02;
+	BSP_LSM303AGR_WriteReg_Mag(MAG_CFG_REG_B, d, 1);
+
+	BSP_LSM303AGR_ReadReg_Mag(MAG_WHO_AM_I, d, 1);
+	XPRINTF("Mag WHO_AM_I=0x%02X (expect 0x40)\r\n", d[0]);
 }
 
 static void startAcc() {

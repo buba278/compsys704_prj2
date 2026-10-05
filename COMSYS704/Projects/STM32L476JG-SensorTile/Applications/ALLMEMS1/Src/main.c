@@ -15,7 +15,7 @@
 		1.2 Serial Debug - Use XPRINTF("",param1,..) to print debug statements to USB-UART
 	2. Intialise all sensors, variables, etc in the Block ***Intialise Here***
 	3. Read sensors and process the sensor data in the block ***READ SENSORS & PROCESS**
-		3.1 This block gets executed every 100ms, when ReadSensor gets set by TIM4 - you can change TIM4 clock input to change this, in the InitTimers function
+		3.1 This block gets executed every 20ms (SENSOR_SAMPLE_HZ = 50Hz), when ReadSensor gets set by TIM4 - you can change TIM4 clock input to change this, in the InitTimers function
 	4. The device name seen by the ST BLE Sensor app is set by the NodeName[1] - NodeName[7] variables, change them in ***Intialise here**** block
 	5. The SPI Read and Write functions have been written for you. Example usage for these are in the function InitLSM(). Noted there are separate functions
 		for magnetometer and accelerometer.
@@ -44,6 +44,8 @@
 
 
 #include "SensorTile_bus.h"
+
+#include "step_counter.h"
 
    
 /* Private typedef -----------------------------------------------------------*/
@@ -84,6 +86,32 @@
 
 #define LSM_ACC_CS_LOW() HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4,GPIO_PIN_RESET);
 #define LSM_ACC_CS_HIGH() HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4,GPIO_PIN_SET);
+
+//#CS704 - LSM303AGR accelerometer registers (datasheet section 8)
+#define LSM303AGR_WHO_AM_I_A     0x0F
+#define LSM303AGR_CTRL_REG1_A    0x20
+#define LSM303AGR_CTRL_REG4_A    0x23
+#define LSM303AGR_OUT_X_L_A      0x28
+
+#define LSM303AGR_ACC_ID         0x33	//expected content of WHO_AM_I_A
+
+//CTRL_REG1_A: ODR = 100Hz (0101), LPen = 0, Z, Y and X axes enabled
+#define ACC_CTRL_REG1_VALUE      0x57
+//CTRL_REG4_A: BDU = 1, full scale = +-4g (01), HR = 1 (12-bit high resolution),
+//             bit 0 = 1 to keep the SPI 3-wire interface enabled (must always be set)
+#define ACC_CTRL_REG4_VALUE      0x99
+
+//Sensitivity at +-4g in high resolution mode is 1.95 mg/LSB (datasheet table 3),
+//written as a fraction so the conversion can use integer maths
+#define ACC_SENSITIVITY_NUM      195
+#define ACC_SENSITIVITY_DEN      100
+
+//Set to 1 to print every accelerometer sample over USB-UART (for logging/tuning)
+#define ACC_DEBUG_PRINT          0
+
+//How often the READ SENSORS & PROCESS block runs. TIM4 counts at 10kHz.
+#define SENSOR_SAMPLE_HZ         STEP_COUNTER_SAMPLE_HZ
+#define SENSOR_TIMER_PERIOD      ((10000 / SENSOR_SAMPLE_HZ) - 1)
 
 /* Imported Variables -------------------------------------------------------------*/
 extern uint8_t set_connectable;
@@ -190,6 +218,19 @@ static void startMag() {
 
 static void startAcc() {
 	//#CS704 - Write SPI commands to initiliase Accelerometer
+	uint8_t data;
+
+	//Full scale, resolution and SPI mode first, then switch the sensor on
+	data = ACC_CTRL_REG4_VALUE;
+	BSP_LSM303AGR_WriteReg_Acc(LSM303AGR_CTRL_REG4_A,&data,1);
+	data = ACC_CTRL_REG1_VALUE;
+	BSP_LSM303AGR_WriteReg_Acc(LSM303AGR_CTRL_REG1_A,&data,1);
+
+	//Check the sensor is responding over SPI
+	BSP_LSM303AGR_ReadReg_Acc(LSM303AGR_WHO_AM_I_A,&data,1);
+	if(data != LSM303AGR_ACC_ID) {
+		XPRINTF("Acc not responding, WHO_AM_I = %d\r\n",data);
+	}
 }
 
 static void readMag() {
@@ -204,16 +245,30 @@ static void readMag() {
 //	XPRINTF("MAG=%d,%d,%d\r\n",magx,magy,magz);
 }
 
+//Convert one axis of raw accelerometer output (low byte, high byte) to mg.
+//The output is 12-bit two's complement, left-justified in 16 bits.
+static int32_t accRawToMg(uint8_t low, uint8_t high) {
+	int16_t raw = (int16_t)(((uint16_t)high << 8) | low);
+	int32_t counts = raw / 16;	//right-justify the 12-bit value, keeping the sign
+
+	return (counts * ACC_SENSITIVITY_NUM) / ACC_SENSITIVITY_DEN;
+}
+
 static void readAcc() {
+	uint8_t raw[6];
 
 	//#CS704 - Read Accelerometer Data over SPI
+	//OUT_X_L, OUT_X_H, OUT_Y_L, OUT_Y_H, OUT_Z_L, OUT_Z_H in a single read
+	BSP_LSM303AGR_ReadReg_Acc(LSM303AGR_OUT_X_L_A,raw,6);
 
-	//#CS704 - store sensor values into the variables below
-	ACC_Value.x=100;
-	ACC_Value.y=200;
-	ACC_Value.z=1000;
+	//#CS704 - store sensor values into the variables below (in mg, 1000mg = 1g)
+	ACC_Value.x=accRawToMg(raw[0],raw[1]);
+	ACC_Value.y=accRawToMg(raw[2],raw[3]);
+	ACC_Value.z=accRawToMg(raw[4],raw[5]);
 
-//	XPRINTF("ACC=%d,%d,%d\r\n",accx,accy,accz);
+#if ACC_DEBUG_PRINT
+	XPRINTF("ACC=%d,%d,%d\r\n",(int)ACC_Value.x,(int)ACC_Value.y,(int)ACC_Value.z);
+#endif
 }
 
 /**
@@ -255,16 +310,17 @@ int main(void)
   //***************************************************
 
   //#CS704 - use this to set BLE Device Name
-  NodeName[1] = 'A';
-  NodeName[2] = 'B';
-  NodeName[3] = 'C';
-  NodeName[4] = 'D';
-  NodeName[5] = 'E';
-  NodeName[6] = 'F';
-  NodeName[7] = 'G';
+  NodeName[1] = 'G';
+  NodeName[2] = 'O';
+  NodeName[3] = 'A';
+  NodeName[4] = 'T';
+  NodeName[5] = 'T';
+  NodeName[6] = 'T';
+  NodeName[7] = 'T';
 
   startMag();
   startAcc();
+  StepCounter_Init();
 
   uint8_t BufferToWrite[10] = "ABCDE";
   //***************************************************
@@ -303,7 +359,7 @@ int main(void)
     //***************************************************
     //***************************************************
 
-    //#CS704 - ReadSensor gets set every 100ms by Timer TIM4 (TimEnvHandle)
+    //#CS704 - ReadSensor gets set every 20ms (SENSOR_SAMPLE_HZ) by Timer TIM4 (TimEnvHandle)
     if(ReadSensor) {
     	ReadSensor=0;
 
@@ -313,11 +369,15 @@ int main(void)
 
 	//*********process sensor data*********
 
-    	COMP_Value.Steps++;
-    	COMP_Value.Heading+=5;
-    	COMP_Value.Distance+=10;
+    	//Step detection from the accelerometer
+    	if(StepCounter_Update(ACC_Value.x,ACC_Value.y,ACC_Value.z)) {
+    		XPRINTF("Steps = %d \r\n",(int)StepCounter_GetSteps());
+    	}
+    	COMP_Value.Steps = StepCounter_GetSteps();
 
-    	XPRINTF("Steps = %d \r\n",(int)COMP_Value.Steps);
+    	//Distance is not used in this project, so it carries the filtered step
+    	//signal (mg) to the app for tuning the step detector
+    	COMP_Value.Distance = (uint32_t)StepCounter_GetSignal();
 
     }
 
@@ -484,8 +544,8 @@ static void InitTimers(void)
 
   /* Set TIM4 instance ( Environmental ) */
   TimEnvHandle.Instance = TIM4;
-  /* Initialize TIM4 peripheral */
-  TimEnvHandle.Init.Period = 655;
+  /* Initialize TIM4 peripheral - period set by SENSOR_SAMPLE_HZ (was 655, ~65ms) */
+  TimEnvHandle.Init.Period = SENSOR_TIMER_PERIOD;
   TimEnvHandle.Init.Prescaler = uwPrescalerValue;
   TimEnvHandle.Init.ClockDivision = 0;
   TimEnvHandle.Init.CounterMode = TIM_COUNTERMODE_UP;

@@ -216,6 +216,18 @@ static void startAcc() {
 	//#CS704 - Write SPI commands to initiliase Accelerometer
 }
 
+/* integer square root (bitwise), avoids the float/libm path */
+static uint32_t isqrt64(uint64_t n) {
+	uint64_t r = 0, b = 1ULL << 62;
+	while (b > n) b >>= 2;
+	while (b) {
+		if (n >= r + b) { n -= r + b; r = (r >> 1) + b; }
+		else            { r >>= 1; }
+		b >>= 2;
+	}
+	return (uint32_t)r;
+}
+
 static void readMag() {
 
 	//#CS704 - Read Magnetometer Data over SPI
@@ -234,7 +246,14 @@ static void readMag() {
 	MAG_Value.y = (magy * 3) / 2;
 	MAG_Value.z = (magz * 3) / 2;
 
-	XPRINTF("MAG=%d,%d,%d\r\n",(int)MAG_Value.x,(int)MAG_Value.y,(int)MAG_Value.z);
+	/* total field strength in mG, independent of board orientation */
+	/* NB: BSP_MOTION_SENSOR_Axes_t in main.h has uint32_t fields, so do signed maths on locals, not on MAG_Value */
+	int32_t mx = (magx * 3) / 2;
+	int32_t my = (magy * 3) / 2;
+	int32_t mz = (magz * 3) / 2;
+	int64_t sumSq = (int64_t)mx*mx + (int64_t)my*my + (int64_t)mz*mz;
+
+	XPRINTF("MAG=%d,%d,%d |B|=%d\r\n",(int)mx,(int)my,(int)mz,(int)isqrt64((uint64_t)sumSq));
 }
 
 static void readAcc() {

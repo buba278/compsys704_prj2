@@ -219,13 +219,22 @@ static void startAcc() {
 static void readMag() {
 
 	//#CS704 - Read Magnetometer Data over SPI
+	uint8_t raw[6];
+
+	/* Burst-read X,Y,Z (the mag auto-increments the address) */
+	BSP_LSM303AGR_ReadReg_Mag(MAG_OUTX_L, raw, 6);
+
+	int16_t magx = (int16_t)((raw[1] << 8) | raw[0]);
+	int16_t magy = (int16_t)((raw[3] << 8) | raw[2]);
+	int16_t magz = (int16_t)((raw[5] << 8) | raw[4]);
 
 	//#CS704 - store sensor values into the variables below
-	MAG_Value.x=100;
-	MAG_Value.y=200;
-	MAG_Value.z=1000;
+	/* 1.5 mGauss/LSB -> milligauss */
+	MAG_Value.x = (magx * 3) / 2;
+	MAG_Value.y = (magy * 3) / 2;
+	MAG_Value.z = (magz * 3) / 2;
 
-//	XPRINTF("MAG=%d,%d,%d\r\n",magx,magy,magz);
+	XPRINTF("MAG=%d,%d,%d\r\n",(int)MAG_Value.x,(int)MAG_Value.y,(int)MAG_Value.z);
 }
 
 static void readAcc() {

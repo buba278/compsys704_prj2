@@ -184,24 +184,76 @@ static void InitLSM() {
 }
 
 
+/* LSM303AGR magnetometer registers */
+#define MAG_WHO_AM_I      0x4F  /* reads 0x40 */
+#define MAG_CFG_REG_A     0x60
+#define MAG_CFG_REG_B     0x61
+#define MAG_CFG_REG_C     0x62
+#define MAG_STATUS_REG    0x67
+#define MAG_OUTX_L        0x68  /* X_L,X_H,Y_L,Y_H,Z_L,Z_H */
+
 static void startMag() {
 	//#CS704 - Write SPI commands to initiliase Magnetometer
+	uint8_t d[2];
+
+	/* I2C_DIS (bit5) must stay set; BDU (bit4) stops L/H bytes mixing across samples */
+	d[0] = 0x30;
+	BSP_LSM303AGR_WriteReg_Mag(MAG_CFG_REG_C, d, 1);
+
+	/* COMP_TEMP_EN, high-res (LP=0), ODR=100Hz, continuous mode */
+	d[0] = 0x80 | (0x03 << 2) | 0x00;
+	BSP_LSM303AGR_WriteReg_Mag(MAG_CFG_REG_A, d, 1);
+
+	/* Offset cancellation on */
+	d[0] = 0x02;
+	BSP_LSM303AGR_WriteReg_Mag(MAG_CFG_REG_B, d, 1);
+
+	BSP_LSM303AGR_ReadReg_Mag(MAG_WHO_AM_I, d, 1);
+	XPRINTF("Mag WHO_AM_I=0x%02X (expect 0x40)\r\n", d[0]);
 }
 
 static void startAcc() {
 	//#CS704 - Write SPI commands to initiliase Accelerometer
 }
 
+/* integer square root (bitwise), avoids the float/libm path */
+static uint32_t isqrt64(uint64_t n) {
+	uint64_t r = 0, b = 1ULL << 62;
+	while (b > n) b >>= 2;
+	while (b) {
+		if (n >= r + b) { n -= r + b; r = (r >> 1) + b; }
+		else            { r >>= 1; }
+		b >>= 2;
+	}
+	return (uint32_t)r;
+}
+
 static void readMag() {
 
 	//#CS704 - Read Magnetometer Data over SPI
+	uint8_t raw[6];
+
+	/* Burst-read X,Y,Z (the mag auto-increments the address) */
+	BSP_LSM303AGR_ReadReg_Mag(MAG_OUTX_L, raw, 6);
+
+	int16_t magx = (int16_t)((raw[1] << 8) | raw[0]);
+	int16_t magy = (int16_t)((raw[3] << 8) | raw[2]);
+	int16_t magz = (int16_t)((raw[5] << 8) | raw[4]);
 
 	//#CS704 - store sensor values into the variables below
-	MAG_Value.x=100;
-	MAG_Value.y=200;
-	MAG_Value.z=1000;
+	/* 1.5 mGauss/LSB -> milligauss */
+	MAG_Value.x = (magx * 3) / 2;
+	MAG_Value.y = (magy * 3) / 2;
+	MAG_Value.z = (magz * 3) / 2;
 
-//	XPRINTF("MAG=%d,%d,%d\r\n",magx,magy,magz);
+	/* total field strength in mG, independent of board orientation */
+	/* NB: BSP_MOTION_SENSOR_Axes_t in main.h has uint32_t fields, so do signed maths on locals, not on MAG_Value */
+	int32_t mx = (magx * 3) / 2;
+	int32_t my = (magy * 3) / 2;
+	int32_t mz = (magz * 3) / 2;
+	int64_t sumSq = (int64_t)mx*mx + (int64_t)my*my + (int64_t)mz*mz;
+
+	XPRINTF("MAG=%d,%d,%d |B|=%d\r\n",(int)mx,(int)my,(int)mz,(int)isqrt64((uint64_t)sumSq));
 }
 
 static void readAcc() {

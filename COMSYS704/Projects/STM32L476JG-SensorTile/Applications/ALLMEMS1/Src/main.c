@@ -184,6 +184,14 @@ static void InitLSM() {
 }
 
 
+/* LSM303AGR magnetometer registers */
+#define MAG_WHO_AM_I      0x4F  /* reads 0x40 */
+#define MAG_CFG_REG_A     0x60
+#define MAG_CFG_REG_B     0x61
+#define MAG_CFG_REG_C     0x62
+#define MAG_STATUS_REG    0x67
+#define MAG_OUTX_L        0x68  /* X_L,X_H,Y_L,Y_H,Z_L,Z_H */
+
 static void startMag() {
 	//#CS704 - Write SPI commands to initiliase Magnetometer
 }

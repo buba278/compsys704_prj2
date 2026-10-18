@@ -46,6 +46,7 @@
 #include "SensorTile_bus.h"
 
 #include "step_counter.h"
+#include "heading.h"
 
    
 /* Private typedef -----------------------------------------------------------*/
@@ -112,6 +113,7 @@
 //How often the READ SENSORS & PROCESS block runs. TIM4 counts at 10kHz.
 #define SENSOR_SAMPLE_HZ         STEP_COUNTER_SAMPLE_HZ
 #define SENSOR_TIMER_PERIOD      ((10000 / SENSOR_SAMPLE_HZ) - 1)
+_Static_assert(HEADING_SAMPLE_HZ == SENSOR_SAMPLE_HZ, "heading filters assume the sensor loop rate");
 
 //Set to 1 to print every magnetometer sample over USB-UART (for logging)
 #define MAG_DEBUG_PRINT          0
@@ -380,6 +382,7 @@ int main(void)
   startMag();
   startAcc();
   StepCounter_Init();
+  Heading_Init();
 
   uint8_t BufferToWrite[10] = "ABCDE";
   //***************************************************
@@ -433,6 +436,10 @@ int main(void)
     		XPRINTF("Steps = %d \r\n",(int)StepCounter_GetSteps());
     	}
     	COMP_Value.Steps = StepCounter_GetSteps();
+
+    	//Heading relative to the start direction, 0 to 359 degrees clockwise
+    	Heading_Update((int32_t)MAG_Value.x,(int32_t)MAG_Value.y);
+    	COMP_Value.Heading = Heading_GetDegrees();
 
     	//Distance is not used in this project, so it carries the filtered step
     	//signal (mg) to the app for tuning the step detector

@@ -27,10 +27,15 @@
 /* Rate at which Heading_Update() is called, main.c checks it matches the sensor timer */
 #define HEADING_SAMPLE_HZ        50
 
-/* From the calibrate view of SensorTile Live (buba278.github.io/tools/sensortile) */
-#define MAG_OFFSET_X             119     /* mG */
-#define MAG_OFFSET_Y             7       /* mG */
-#define MAG_SCALE_Y              1.069f
+/* mag calibration from SensorTile Live */
+#define MAG_OFFSET_X      54    /* mG */
+#define MAG_OFFSET_Y     145    /* mG */
+#define MAG_SCALE_Y    1.064f
+#define MAG_BASELINE     734    /* mG, clean |B| */
+#define MAG_HOLD_PCT      15
+/* z values are for tilt compensation, heading.c does not use them yet */
+#define MAG_OFFSET_Z      39    /* mG */
+#define MAG_SCALE_Z    1.121f
 
 /* Set to 1 if a clockwise turn makes the heading fall (depends on how the chip is mounted) */
 #define HEADING_INVERT           1

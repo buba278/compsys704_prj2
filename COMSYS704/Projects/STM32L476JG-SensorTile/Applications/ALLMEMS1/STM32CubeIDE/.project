@@ -93,6 +93,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Src/step_counter.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/heading.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Src/heading.c</locationURI>
+		</link>
+		<link>
 			<name>Application/User/stm32l4xx_hal_msp.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Src/stm32l4xx_hal_msp.c</locationURI>

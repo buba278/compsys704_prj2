@@ -4,9 +4,11 @@
   * @brief   Step detection from 3-axis accelerometer data (#CS704)
   *
   * Algorithm (run once per sample):
-  *   1. Magnitude      |a| = sqrt(x^2 + y^2 + z^2). Using the magnitude makes
-  *                     the detector independent of how the device is oriented.
-  *   2. Gravity removal  A slow exponential moving average of |a| tracks the
+  *   1. Vertical axis  Only the z axis is used (gravity lies along z when the
+  *                     device is worn as intended). Steps bounce the body up and
+  *                     down, whereas sliding or shaking sideways moves x and y,
+  *                     which are ignored.
+  *   2. Gravity removal  A slow exponential moving average of az tracks the
   *                     constant ~1 g component; subtracting it leaves only the
   *                     acceleration caused by movement, centred on zero. This
   *                     also cancels any sensor offset or scale error.
@@ -34,7 +36,7 @@
 #define SMOOTH_LEN               5
 
 /* Smallest peak (mg above the gravity baseline) that can count as a step */
-#define MIN_THRESHOLD_MG         80.0f
+#define MIN_THRESHOLD_MG         130.0f
 
 /* Threshold as a fraction of the recent peak-to-peak step amplitude */
 #define THRESHOLD_FRACTION       0.25f
@@ -82,17 +84,14 @@ void StepCounter_Init(void)
 
 uint8_t StepCounter_Update(int32_t ax_mg, int32_t ay_mg, int32_t az_mg)
 {
-  float x = (float)ax_mg;
-  float y = (float)ay_mg;
-  float z = (float)az_mg;
-  float magnitude;
+  float magnitude = (float)az_mg;   /* vertical axis only */
   float threshold;
   float sum = 0.0f;
   uint8_t i;
   uint8_t stepDetected = 0;
 
-  /* 1. Orientation-independent magnitude */
-  magnitude = sqrtf(x * x + y * y + z * z);
+  (void)ax_mg;
+  (void)ay_mg;
 
   /* 2. Remove gravity. Seed the filter with the first sample so there is no
         start-up transient that could be mistaken for a step. */

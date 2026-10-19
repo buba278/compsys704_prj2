@@ -31,8 +31,6 @@
 #define MAG_OFFSET_X    -175    /* mG */
 #define MAG_OFFSET_Y     109    /* mG */
 #define MAG_SCALE_Y    1.057f
-#define MAG_BASELINE     550    /* mG, clean |B| */
-#define MAG_HOLD_PCT      15
 
 /* Set to 1 if a clockwise turn makes the heading fall (depends on how the chip is mounted) */
 #define HEADING_INVERT           1

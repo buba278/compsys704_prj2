@@ -14,8 +14,9 @@ Firmware for the ST SensorTile (STM32L476JG) that tracks a person's step count a
 1. Open STM32CubeIDE and choose **File > Open Projects from File System...**
 2. Select the `COMSYS704` folder and tick **only** `COMSYS704/Projects/STM32L476JG-SensorTile/Applications/ALLMEMS1/STM32CubeIDE`.
 3. Build the `Debug` configuration (hammer icon), then Run to flash the SensorTile over the STLINK-V3.
-4. Serial debug output: connect a terminal to the board's COM port at 115200 baud, 8 data bits, no parity, 1 stop bit.
-5. In the ST BLE Sensor app, connect to the device and plot **Accelerometer** (raw acceleration in mg), **Magnetometer**, or **Gyroscope** (X = step count, Y = heading, Z = filtered step signal in mg).
+4. Hold the board flat and still for the first 1.5 s after power on. The direction it faces then becomes heading 0.
+5. Serial debug output: connect a terminal to the board's COM port at 115200 baud, 8 data bits, no parity, 1 stop bit.
+6. In the ST BLE Sensor app, connect to the device and plot **Accelerometer** (raw acceleration in mg), **Magnetometer**, or **Gyroscope** (X = step count, Y = heading in degrees, Z = filtered step signal in mg).
 
 ## Code structure
 
@@ -42,9 +43,9 @@ The LSM303AGR accelerometer is configured in `startAcc()`:
 
 `StepCounter_Update()` is called with each accelerometer sample at 50 Hz (`STEP_COUNTER_SAMPLE_HZ`, which also sets the TIM4 sensor timer). For each sample it:
 
-1. takes the magnitude of the acceleration vector, so the result does not depend on device orientation;
-2. subtracts a slow moving average to remove gravity;
-3. smooths the result with a 5-sample moving average;
+1. takes only the z axis, which is vertical when the board is held flat, so sideways movement and shaking are ignored;
+2. subtracts a slow moving average (1 s time constant) to remove gravity, starting from the first reading so power on is not counted as a step;
+3. smooths the result with an 8-sample (160 ms) moving average, which keeps the walking bounce but removes faster shaking and the rebound after a heel strike;
 4. counts a step when the signal rises above a threshold and then falls back through zero, provided at least 300 ms have passed since the previous step.
 
 The threshold adapts to a quarter of the recent step amplitude, with a minimum of 80 mg. The tunable constants are at the top of `Src/step_counter.c`.

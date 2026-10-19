@@ -25,6 +25,7 @@ All application code is in `COMSYS704/Projects/STM32L476JG-SensorTile/Applicatio
 | --- | --- |
 | `Src/main.c` | Sensor initialisation and reading over SPI (`startAcc`, `readAcc`, `startMag`, `readMag`), the 50 Hz sensor loop and BLE transmission |
 | `Src/step_counter.c`, `Inc/step_counter.h` | Step detection algorithm, independent of the hardware |
+| `Src/heading.c`, `Inc/heading.h` | Relative heading from the magnetometer, independent of the hardware |
 
 ### Accelerometer
 
@@ -47,3 +48,9 @@ The LSM303AGR accelerometer is configured in `startAcc()`:
 4. counts a step when the signal rises above a threshold and then falls back through zero, provided at least 300 ms have passed since the previous step.
 
 The threshold adapts to a quarter of the recent step amplitude, with a minimum of 80 mg. The tunable constants are at the top of `Src/step_counter.c`.
+
+### Heading
+
+`Heading_Update()` is called with each magnetometer sample at 50 Hz. It subtracts the hard iron offsets, scales y, takes the angle with `atan2`, and subtracts a zero reference averaged over the first 1.5 s after power on (hold the board still and flat). The output is whole degrees, 0 to 359, clockwise from the start direction, sent in the gyroscope Y field.
+
+The calibration constants are at the top of `Inc/heading.h` and depend on where the board is used, see `docs/calibration-presets.md`.

@@ -24,18 +24,15 @@
 
 #include <stdint.h>
 
-/* Rate at which Heading_Update() is called, main.c checks it matches the sensor timer */
+/* Rate at which Heading_Update() is called, checked against the sensor timer in main.c */
 #define HEADING_SAMPLE_HZ        50
 
 /* mag calibration from three 360 turns held off the floor, the floor seems to add about 300 mG */
-#define MAG_OFFSET_X      25    /* mG */
-#define MAG_OFFSET_Y     165    /* mG */
-#define MAG_SCALE_Y    0.943f
-#define MAG_BASELINE     734    /* mG, clean |B| */
+#define MAG_OFFSET_X    -175    /* mG */
+#define MAG_OFFSET_Y     109    /* mG */
+#define MAG_SCALE_Y    1.057f
+#define MAG_BASELINE     550    /* mG, clean |B| */
 #define MAG_HOLD_PCT      15
-/* z values are for tilt compensation, heading.c does not use them yet */
-#define MAG_OFFSET_Z      39    /* mG */
-#define MAG_SCALE_Z    1.121f
 
 /* Set to 1 if a clockwise turn makes the heading fall (depends on how the chip is mounted) */
 #define HEADING_INVERT           1

@@ -19,8 +19,7 @@
 
 #include <stdint.h>
 
-/* Rate at which StepCounter_Update() must be called. main.c uses this value to
-   configure the sensor-read timer, so the two always agree. */
+/* Rate at which StepCounter_Update() must be called, main.c derives the sensor timer from it */
 #define STEP_COUNTER_SAMPLE_HZ   50
 
 /**
@@ -41,8 +40,7 @@ uint8_t StepCounter_Update(int32_t ax_mg, int32_t ay_mg, int32_t az_mg);
 uint32_t StepCounter_GetSteps(void);
 
 /**
-  * @brief  Latest filtered, gravity-free acceleration magnitude in mg.
-  *         This is the signal the detector thresholds; useful for tuning.
+  * @brief  Latest filtered, gravity-free z acceleration in mg (the thresholded signal, for tuning).
   */
 int32_t StepCounter_GetSignal(void);
 

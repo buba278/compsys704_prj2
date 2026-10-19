@@ -237,7 +237,6 @@ static void startMag() {
 	d[0] = 0x80 | (0x03 << 2) | 0x00;
 	BSP_LSM303AGR_WriteReg_Mag(MAG_CFG_REG_A, d, 1);
 
-	/* Offset cancellation on */
 	d[0] = 0x02;
 	BSP_LSM303AGR_WriteReg_Mag(MAG_CFG_REG_B, d, 1);
 
@@ -249,13 +248,12 @@ static void startAcc() {
 	//#CS704 - Write SPI commands to initiliase Accelerometer
 	uint8_t data;
 
-	//Full scale, resolution and SPI mode first, then switch the sensor on
+	//Configure before enabling the axes and ODR
 	data = ACC_CTRL_REG4_VALUE;
 	BSP_LSM303AGR_WriteReg_Acc(LSM303AGR_CTRL_REG4_A,&data,1);
 	data = ACC_CTRL_REG1_VALUE;
 	BSP_LSM303AGR_WriteReg_Acc(LSM303AGR_CTRL_REG1_A,&data,1);
 
-	//Check the sensor is responding over SPI
 	BSP_LSM303AGR_ReadReg_Acc(LSM303AGR_WHO_AM_I_A,&data,1);
 	if(data != LSM303AGR_ACC_ID) {
 		XPRINTF("Acc not responding, WHO_AM_I = %d\r\n",data);
@@ -292,8 +290,7 @@ static void readMag() {
 	MAG_Value.y = (magy * 3) / 2;
 	MAG_Value.z = (magz * 3) / 2;
 
-	/* total field strength in mG, independent of board orientation */
-	/* NB: BSP_MOTION_SENSOR_Axes_t in main.h has uint32_t fields, so do signed maths on locals, not on MAG_Value */
+	/* |B| in mG. Axes_t fields are uint32_t, so use signed locals rather than MAG_Value */
 	int32_t mx = (magx * 3) / 2;
 	int32_t my = (magy * 3) / 2;
 	int32_t mz = (magz * 3) / 2;
@@ -610,7 +607,7 @@ static void InitTimers(void)
 
   /* Set TIM4 instance ( Environmental ) */
   TimEnvHandle.Instance = TIM4;
-  /* Initialize TIM4 peripheral - period set by SENSOR_SAMPLE_HZ (was 655, ~65ms) */
+  /* Initialize TIM4 peripheral */
   TimEnvHandle.Init.Period = SENSOR_TIMER_PERIOD;
   TimEnvHandle.Init.Prescaler = uwPrescalerValue;
   TimEnvHandle.Init.ClockDivision = 0;

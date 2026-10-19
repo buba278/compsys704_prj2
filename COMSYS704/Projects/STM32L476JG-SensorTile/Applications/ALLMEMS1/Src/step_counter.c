@@ -3,25 +3,15 @@
   * @file    step_counter.c
   * @brief   Step detection from 3-axis accelerometer data (#CS704)
   *
-  * Algorithm (run once per sample):
-  *   1. Vertical axis  Only the z axis is used (gravity lies along z when the
-  *                     device is worn as intended). Steps bounce the body up and
-  *                     down, whereas sliding or shaking sideways moves x and y,
-  *                     which are ignored.
-  *   2. Gravity removal  A slow exponential moving average of az tracks the
-  *                     constant ~1 g component; subtracting it leaves only the
-  *                     acceleration caused by movement, centred on zero. This
-  *                     also cancels any sensor offset or scale error.
-  *   3. Smoothing      A moving average removes heel-strike jitter and shaking
-  *                     faster than walking, which would otherwise produce
-  *                     double peaks or false steps.
-  *   4. Peak detection The detector "arms" when the signal rises above an
-  *                     upper threshold and counts a step when the signal then
-  *                     falls back through zero. The threshold adapts to the
-  *                     recent step amplitude, with a fixed minimum so that
-  *                     standing still does not count.
-  *   5. Timing gate    A peak that completes too soon after the previous step
-  *                     is rejected, since people cannot step that fast.
+  * Per sample:
+  *   1. Vertical axis  Z only, so sideways shaking is ignored.
+  *   2. Gravity removal  Slow average of az subtracted, which also cancels
+  *                     sensor offset.
+  *   3. Smoothing      Moving average to avoid double peaks and shaking.
+  *   4. Peak detection Arm above an adaptive threshold (with a fixed floor so
+  *                     standing still does not count), count on the downward
+  *                     zero crossing.
+  *   5. Timing gate    Reject peaks closer than MIN_STEP_INTERVAL.
   ******************************************************************************
   */
 
@@ -30,15 +20,13 @@
 
 /* Tunable parameters --------------------------------------------------------*/
 
-/* Gravity filter coefficient. Time constant = 1 / (alpha * sample rate) = 1 s */
+/* Gravity filter coefficient, 1 s time constant at 50 Hz */
 #define GRAVITY_ALPHA            0.02f
 
-/* Moving average length in samples (8 samples = 160 ms at 50 Hz). Walking at
-   1.5-2.5 Hz keeps 75-90% of its amplitude, while shaking at 4-5 Hz and the
-   rebound after a hard heel strike are cut to under half. */
+/* Moving average length in samples, 160 ms at 50 Hz */
 #define SMOOTH_LEN               8
 
-/* Smallest peak (mg above the gravity baseline) that can count as a step */
+/* Smallest peak (mg above gravity) that can count as a step */
 #define MIN_THRESHOLD_MG         110.0f
 
 /* Threshold as a fraction of the recent peak-to-peak step amplitude */
@@ -47,15 +35,15 @@
 /* How quickly the amplitude estimate follows new steps (0..1) */
 #define AMPLITUDE_ALPHA          0.25f
 
-/* Shortest time between two steps: 300 ms, i.e. at most ~3.3 steps per second */
+/* Shortest time between two steps, 300 ms in samples */
 #define MIN_STEP_INTERVAL        ((300 * STEP_COUNTER_SAMPLE_HZ) / 1000)
 
-/* With no step for this long (2 s) the user has stopped: forget the amplitude */
+/* No step for 2 s in samples: forget the amplitude */
 #define IDLE_TIMEOUT             (2 * STEP_COUNTER_SAMPLE_HZ)
 
 /* Private variables ---------------------------------------------------------*/
 static uint32_t stepCount;
-static float    gravity;                 /* slow average of |a| in mg          */
+static float    gravity;                 /* slow average of az in mg           */
 static uint8_t  gravityValid;            /* 0 until the first sample is seen   */
 static float    smoothBuf[SMOOTH_LEN];   /* ring buffer for the moving average */
 static uint8_t  smoothIdx;
@@ -96,15 +84,13 @@ uint8_t StepCounter_Update(int32_t ax_mg, int32_t ay_mg, int32_t az_mg)
   (void)ax_mg;
   (void)ay_mg;
 
-  /* 2. Remove gravity. Seed the filter with the first sample so there is no
-        start-up transient that could be mistaken for a step. */
+  /* Seed with the first sample so start-up is not mistaken for a step */
   if (!gravityValid) {
     gravity = magnitude;
     gravityValid = 1;
   }
   gravity += GRAVITY_ALPHA * (magnitude - gravity);
 
-  /* 3. Moving average of the gravity-free signal */
   smoothBuf[smoothIdx] = magnitude - gravity;
   smoothIdx = (uint8_t)((smoothIdx + 1) % SMOOTH_LEN);
   for (i = 0; i < SMOOTH_LEN; i++) {
@@ -112,7 +98,6 @@ uint8_t StepCounter_Update(int32_t ax_mg, int32_t ay_mg, int32_t az_mg)
   }
   signal = sum / SMOOTH_LEN;
 
-  /* Track the extremes of the current step cycle for the amplitude estimate */
   if (signal > peakMax) {
     peakMax = signal;
   }
@@ -124,7 +109,7 @@ uint8_t StepCounter_Update(int32_t ax_mg, int32_t ay_mg, int32_t az_mg)
     samplesSinceStep++;
   }
 
-  /* The user has stopped walking: drop back to the minimum threshold */
+  /* Stopped walking, fall back to the minimum threshold */
   if (samplesSinceStep > IDLE_TIMEOUT) {
     amplitude = 0.0f;
     if (!armed) {
@@ -133,7 +118,6 @@ uint8_t StepCounter_Update(int32_t ax_mg, int32_t ay_mg, int32_t az_mg)
     }
   }
 
-  /* 4. Adaptive threshold with a fixed floor */
   threshold = THRESHOLD_FRACTION * amplitude;
   if (threshold < MIN_THRESHOLD_MG) {
     threshold = MIN_THRESHOLD_MG;
@@ -144,10 +128,8 @@ uint8_t StepCounter_Update(int32_t ax_mg, int32_t ay_mg, int32_t az_mg)
       armed = 1;
     }
   } else if (signal < 0.0f) {
-    /* The peak has finished (downward zero crossing) */
     armed = 0;
 
-    /* 5. Only count it if enough time has passed since the last step */
     if (samplesSinceStep >= MIN_STEP_INTERVAL) {
       stepCount++;
       stepDetected = 1;

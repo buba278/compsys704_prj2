@@ -1,4 +1,4 @@
-# COMPSYS 704 Project 2 — Pedestrian Dead Reckoning on SensorTile
+# COMPSYS 704 Project 2: Pedestrian Dead Reckoning on SensorTile
 
 Firmware for the ST SensorTile (STM32L476JG) that tracks a person's step count and orientation using the on-board LSM303AGR accelerometer and magnetometer, and streams the results over Bluetooth Low Energy to the ST BLE Sensor mobile app.
 
@@ -48,7 +48,7 @@ The LSM303AGR accelerometer is configured in `startAcc()`:
 3. smooths the result with an 8-sample (160 ms) moving average, which keeps the walking bounce but removes faster shaking and the rebound after a heel strike;
 4. counts a step when the signal rises above a threshold and then falls back through zero, provided at least 300 ms have passed since the previous step.
 
-The threshold adapts to a quarter of the recent step amplitude, with a minimum of 80 mg. The tunable constants are at the top of `Src/step_counter.c`.
+The threshold adapts to a quarter of the recent step amplitude, with a minimum of 110 mg. The tunable constants are at the top of `Src/step_counter.c`.
 
 ### Heading
 

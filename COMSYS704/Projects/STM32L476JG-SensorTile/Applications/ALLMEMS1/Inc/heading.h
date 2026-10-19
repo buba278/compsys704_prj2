@@ -28,10 +28,10 @@
 #define HEADING_SAMPLE_HZ        50
 
 /* mag calibration from SensorTile Live */
-#define MAG_OFFSET_X      54    /* mG */
-#define MAG_OFFSET_Y     145    /* mG */
-#define MAG_SCALE_Y    1.064f
-#define MAG_BASELINE     734    /* mG, clean |B| */
+#define MAG_OFFSET_X    -206    /* mG */
+#define MAG_OFFSET_Y      93    /* mG */
+#define MAG_SCALE_Y    1.081f
+#define MAG_BASELINE     570    /* mG, clean |B| */
 #define MAG_HOLD_PCT      15
 /* z values are for tilt compensation, heading.c does not use them yet */
 #define MAG_OFFSET_Z      39    /* mG */

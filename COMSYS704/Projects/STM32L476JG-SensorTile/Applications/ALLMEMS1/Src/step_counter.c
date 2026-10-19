@@ -12,8 +12,9 @@
   *                     constant ~1 g component; subtracting it leaves only the
   *                     acceleration caused by movement, centred on zero. This
   *                     also cancels any sensor offset or scale error.
-  *   3. Smoothing      A short moving average removes heel-strike jitter that
-  *                     would otherwise produce double peaks.
+  *   3. Smoothing      A moving average removes heel-strike jitter and shaking
+  *                     faster than walking, which would otherwise produce
+  *                     double peaks or false steps.
   *   4. Peak detection The detector "arms" when the signal rises above an
   *                     upper threshold and counts a step when the signal then
   *                     falls back through zero. The threshold adapts to the
@@ -32,11 +33,13 @@
 /* Gravity filter coefficient. Time constant = 1 / (alpha * sample rate) = 1 s */
 #define GRAVITY_ALPHA            0.02f
 
-/* Moving average length in samples (5 samples = 100 ms at 50 Hz) */
-#define SMOOTH_LEN               5
+/* Moving average length in samples (8 samples = 160 ms at 50 Hz). Walking at
+   1.5-2.5 Hz keeps 75-90% of its amplitude, while shaking at 4-5 Hz and the
+   rebound after a hard heel strike are cut to under half. */
+#define SMOOTH_LEN               8
 
 /* Smallest peak (mg above the gravity baseline) that can count as a step */
-#define MIN_THRESHOLD_MG         130.0f
+#define MIN_THRESHOLD_MG         110.0f
 
 /* Threshold as a fraction of the recent peak-to-peak step amplitude */
 #define THRESHOLD_FRACTION       0.25f

@@ -26,17 +26,7 @@ All application code is in `COMSYS704/Projects/STM32L476JG-SensorTile/Applicatio
 | --- | --- |
 | `Src/main.c` | Sensor initialisation and reading over SPI (`startAcc`, `readAcc`, `startMag`, `readMag`), the 50 Hz sensor loop and BLE transmission |
 | `Src/step_counter.c`, `Inc/step_counter.h` | Step detection algorithm, independent of the hardware |
-| `Src/heading.c`, `Inc/heading.h` | Relative heading from the magnetometer, and its calibration constants, independent of the hardware |
-| `tools/replay_steps.c` (repo root) | PC program that replays a logged serial capture through `step_counter.c`, for tuning |
-
-Both algorithm modules make no hardware calls, so they also compile on a PC. `main.c` reads both sensors every 20 ms (TIM4, 50 Hz), passes the readings to `StepCounter_Update()` and `Heading_Update()`, and sends the results over BLE in the gyroscope characteristic, with steps and heading multiplied by 10.
-
-Debug switches at the top of `main.c`:
-
-| Define | Effect when set to 1 |
-| --- | --- |
-| `ACC_DEBUG_PRINT` | Prints every accelerometer sample as `ACC=x,y,z` (mg) over USB serial, the input format for `tools/replay_steps.c` |
-| `MAG_DEBUG_PRINT` | Prints every magnetometer sample (mG) and the field strength over USB serial |
+| `Src/heading.c`, `Inc/heading.h` | Relative heading from the magnetometer, independent of the hardware |
 
 ### Accelerometer
 
@@ -58,26 +48,10 @@ The LSM303AGR accelerometer is configured in `startAcc()`:
 3. smooths the result with an 8-sample (160 ms) moving average, which keeps the walking bounce but removes faster shaking and the rebound after a heel strike;
 4. counts a step when the signal rises above a threshold and then falls back through zero, provided at least 300 ms have passed since the previous step.
 
-The threshold adapts to a quarter of the recent step amplitude, with a minimum of 110 mg, and drops back to the minimum after 2 s without a step. The adjustable constants are at the top of `Src/step_counter.c`.
-
-### Magnetometer
-
-The LSM303AGR magnetometer is configured in `startMag()`:
-
-| Register | Value | Meaning |
-| --- | --- | --- |
-| `CFG_REG_C_M` (0x62) | 0x30 | I2C disabled (needed for SPI), block data update |
-| `CFG_REG_A_M` (0x60) | 0x8C | Temperature compensation, high-resolution, 100 Hz, continuous mode |
-| `CFG_REG_B_M` (0x61) | 0x02 | Offset cancellation |
-
-`readMag()` reads the six output registers in one SPI transfer and converts each axis to mG (1.5 mG/LSB).
+The threshold adapts to a quarter of the recent step amplitude, with a minimum of 80 mg. The tunable constants are at the top of `Src/step_counter.c`.
 
 ### Heading
 
-`Heading_Update()` is called with the x and y magnetometer readings at 50 Hz. It:
+`Heading_Update()` is called with each magnetometer sample at 50 Hz. It subtracts the hard iron offsets, scales y, takes the angle with `atan2`, and subtracts a zero reference averaged over the first 1.5 s after power on (hold the board still and flat). The output is whole degrees, 0 to 359, clockwise from the start direction, sent in the gyroscope Y field.
 
-1. corrects the readings with the calibration constants in `Inc/heading.h` (`MAG_OFFSET_X`, `MAG_OFFSET_Y` and `MAG_SCALE_Y`), so a full turn traces a circle centred on zero;
-2. averages the direction over the first 1.5 s (`HEADING_SETTLE_MS`), which becomes heading 0;
-3. returns the angle of the field minus that zero direction, 0 to 359 degrees, increasing clockwise.
-
-The calibration only holds near the spot where it was made. To recalibrate, turn the flat board slowly through a full circle at hand height, set each offset to the middle of the smallest and largest reading on that axis and `MAG_SCALE_Y` to the x range divided by the y range, then rebuild and flash.
+The calibration constants are at the top of `Inc/heading.h` and depend on where the board is used, see `docs/calibration-presets.md`.
